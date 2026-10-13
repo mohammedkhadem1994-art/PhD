@@ -121,15 +121,72 @@
             color: #68e1d2;
         }
 
-        .hero {
-            background: linear-gradient(120deg, #10243e, #176b87);
-            color: white;
-            padding: 90px 7%;
-        }
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 27, 48, 0.92),
+            rgba(16, 56, 80, 0.70)
+        ),
+        url("images/ro.jpg") center center / cover no-repeat;
 
-        .hero-content {
-            max-width: 850px;
-        }
+    color: white;
+    padding: 75px 7%;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+}
+
+/* Text on the left and portrait on the right */
+.hero-content {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+    max-width: 760px;
+}
+
+/* Personal portrait */
+.profile-photo {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.30);
+    flex-shrink: 0;
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 650px) {
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .profile-photo {
+        width: 175px;
+        height: 210px;
+    }
+}
 
         .eyebrow {
             color: #75e0d3;
@@ -522,7 +579,7 @@
         <!-- Personal photo on the right -->
         <img
             class="profile-photo"
-            src="images/profile.jpg"
+            src="images/dr.jpg"
             alt="Mohammed Khadem, PhD"
             loading="eager">
     </div>
