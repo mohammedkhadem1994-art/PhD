@@ -511,6 +511,47 @@
                 padding: 23px;
             }
         }
+        
+/* Place profile photo at the far right of the hero */
+.hero-content {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    padding-right: 300px;
+}
+
+.profile-photo {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+
+    border: 3px solid white;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 650px) {
+    .hero-content {
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-photo {
+        position: static;
+        transform: none;
+        width: 175px;
+        height: 210px;
+        margin: 0 auto 25px;
+    }
+}
+
     </style>
 </head>
 
