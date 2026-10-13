@@ -1,14 +1,13 @@
+from pathlib import Path
 
-<!DOCTYPE html>
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="author" content="Mohammed Khadem">
     <meta name="description" content="Official academic website of Mohammed Khadem, PhD, featuring research in robotics, mechatronics, UAVs, rehabilitation robotics, and autonomous systems.">
     <meta name="theme-color" content="#10243e">
-
     <title>Mohammed Khadem, PhD | Academic Website</title>
 
     <style>
@@ -23,11 +22,7 @@
             --white: #ffffff;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         html {
             scroll-behavior: smooth;
@@ -39,27 +34,55 @@
             line-height: 1.7;
             color: var(--text);
             background: var(--white);
+            padding-right: 220px;
         }
 
-        a {
-            color: var(--blue);
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: var(--teal);
-        }
-
-        img,
-        video,
-        iframe {
-            max-width: 100%;
-        }
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { color: var(--teal); }
+        img, video, iframe { max-width: 100%; }
 
         .container {
             width: 86%;
             max-width: 1150px;
             margin: auto;
+        }
+
+        /* RIGHT SIDEBAR */
+        .right-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 220px;
+            height: 100vh;
+            padding: 25px 14px;
+            overflow-y: auto;
+            background: var(--navy);
+            color: white;
+            z-index: 1000;
+            box-shadow: -3px 0 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .right-sidebar h3 {
+            color: white;
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .right-sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 6px;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .right-sidebar a:hover {
+            background: #245078;
+            color: #68e1d2;
         }
 
         header {
@@ -76,22 +99,10 @@
             flex-wrap: wrap;
         }
 
-        header h1 {
-            font-size: 27px;
-            line-height: 1.3;
-        }
+        header h1 { font-size: 27px; line-height: 1.3; }
+        header p { color: #c3d9e8; font-size: 14px; margin-top: 6px; }
 
-        header p {
-            color: #c3d9e8;
-            font-size: 14px;
-            margin-top: 6px;
-        }
-
-        .header-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+        .header-links { display: flex; flex-wrap: wrap; gap: 10px; }
 
         .header-links a {
             color: white;
@@ -112,81 +123,45 @@
             z-index: 100;
         }
 
-        nav a {
+        nav a { color: white; font-size: 14px; }
+        nav a:hover { color: #68e1d2; }
+
+        /* HERO */
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(10, 27, 48, 0.92), rgba(16, 56, 80, 0.70)),
+                url("images/ro.jpeg") center center / cover no-repeat;
             color: white;
-            font-size: 14px;
+            padding: 75px 7%;
+            min-height: 470px;
+            display: flex;
+            align-items: center;
         }
 
-        nav a:hover {
-            color: #68e1d2;
+        .hero-content {
+            position: relative;
+            width: 100%;
+            max-width: 1150px;
+            min-height: 300px;
+            margin: 0 auto;
+            padding-right: 290px;
         }
 
-.hero {
-    background:
-        linear-gradient(
-            90deg,
-            rgba(10, 27, 48, 0.92),
-            rgba(16, 56, 80, 0.70)
-        ),
-        url("images/ro.jpeg") center center / cover no-repeat;
+        .hero-text { width: 100%; max-width: 760px; }
 
-    color: white;
-    padding: 75px 7%;
-    min-height: 470px;
-    display: flex;
-    align-items: center;
-}
-
-/* Text on the left and portrait on the right */
-.hero-content {
-    width: 100%;
-    max-width: 1150px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 45px;
-}
-
-.hero-text {
-    flex: 1;
-    min-width: 0;
-    max-width: 760px;
-}
-
-/* Personal portrait */
-.profile-photo {
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 18px;
-    border: 3px solid rgba(255, 255, 255, 0.85);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.30);
-    flex-shrink: 0;
-}
-
-/* Responsive layout for mobile devices */
-@media (max-width: 650px) {
-    .hero {
-        padding: 45px 6%;
-    }
-
-    .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 25px;
-    }
-
-    .hero-text {
-        max-width: 100%;
-    }
-
-    .profile-photo {
-        width: 175px;
-        height: 210px;
-    }
-}
+        .profile-photo {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center top;
+            border: 3px solid rgba(255, 255, 255, 0.85);
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        }
 
         .eyebrow {
             color: #75e0d3;
@@ -203,11 +178,7 @@
             margin-bottom: 22px;
         }
 
-        .hero p {
-            color: #e0edf5;
-            max-width: 760px;
-            margin-bottom: 25px;
-        }
+        .hero p { color: #e0edf5; max-width: 760px; margin-bottom: 25px; }
 
         .button {
             display: inline-block;
@@ -220,30 +191,12 @@
             margin: 5px 8px 5px 0;
         }
 
-        .button:hover {
-            background: #66dfd0;
-            color: #082d3a;
-        }
+        .button:hover { background: #66dfd0; color: #082d3a; }
+        .button-outline { background: transparent; color: white; border: 1px solid white; }
+        .button-outline:hover { background: #193653; color: white; }
 
-        .button-outline {
-            background: transparent;
-            color: white;
-            border: 1px solid white;
-        }
-
-        .button-outline:hover {
-            background: #193653;
-            color: white;
-        }
-
-        section.content-section {
-            padding: 65px 0;
-            scroll-margin-top: 65px;
-        }
-
-        .alternate {
-            background: var(--light);
-        }
+        section.content-section { padding: 65px 0; scroll-margin-top: 65px; }
+        .alternate { background: var(--light); }
 
         .section-title {
             color: var(--navy);
@@ -252,21 +205,12 @@
             margin-bottom: 14px;
         }
 
-        .section-intro {
-            color: var(--muted);
-            max-width: 800px;
-            margin-bottom: 30px;
-        }
-
-        .about-text p {
-            margin-bottom: 17px;
-        }
+        .section-intro { color: var(--muted); max-width: 800px; margin-bottom: 30px; }
+        .about-text p { margin-bottom: 17px; }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit, minmax(230px, 1fr)
-            );
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 20px;
         }
 
@@ -277,15 +221,8 @@
             padding: 23px;
         }
 
-        .card h3 {
-            color: var(--blue);
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 14px;
-        }
+        .card h3 { color: var(--blue); font-size: 18px; margin-bottom: 10px; }
+        .card p { font-size: 14px; }
 
         .project-card {
             background: white;
@@ -303,9 +240,7 @@
             margin-bottom: 12px;
         }
 
-        .project-card > p {
-            margin-bottom: 13px;
-        }
+        .project-card > p { margin-bottom: 13px; }
 
         .tag {
             display: inline-block;
@@ -318,17 +253,11 @@
             margin-bottom: 13px;
         }
 
-        .media-heading {
-            color: var(--navy);
-            font-size: 16px;
-            margin: 25px 0 13px;
-        }
+        .media-heading { color: var(--navy); font-size: 16px; margin: 25px 0 13px; }
 
         .media-grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit, minmax(220px, 1fr)
-            );
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 17px;
             margin: 15px 0 22px;
         }
@@ -341,30 +270,23 @@
         }
 
         .media-item img {
+            display: block;
             width: 100%;
             height: 220px;
             object-fit: contain;
             background: #edf2f7;
         }
 
-        .media-item figcaption {
-            padding: 10px 12px;
-            color: var(--muted);
-            font-size: 13px;
-        }
+        .media-item figcaption { padding: 10px 12px; color: var(--muted); font-size: 13px; }
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit, minmax(280px, 1fr)
-            );
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin: 15px 0 22px;
         }
 
-        .video-item {
-            min-width: 0;
-        }
+        .video-item { min-width: 0; }
 
         .video-frame {
             display: block;
@@ -375,37 +297,13 @@
             background: #101820;
         }
 
-        .video-caption {
-            color: var(--muted);
-            font-size: 13px;
-            margin-top: 8px;
-        }
+        .video-caption { color: var(--muted); font-size: 13px; margin-top: 8px; }
+        .paper-link { display: inline-block; margin-top: 12px; font-weight: bold; }
 
-        .paper-link {
-            display: inline-block;
-            margin-top: 12px;
-            font-weight: bold;
-        }
-
-        .publication {
-            padding: 22px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .publication:last-child {
-            border-bottom: none;
-        }
-
-        .publication h3 {
-            color: var(--navy);
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .publication p {
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
+        .publication { padding: 22px 0; border-bottom: 1px solid var(--border); }
+        .publication:last-child { border-bottom: none; }
+        .publication h3 { color: var(--navy); font-size: 18px; margin-bottom: 8px; }
+        .publication p { font-size: 14px; margin-bottom: 8px; }
 
         .timeline-item {
             margin-bottom: 27px;
@@ -413,16 +311,8 @@
             border-left: 3px solid var(--teal);
         }
 
-        .timeline-item h3 {
-            color: var(--navy);
-            margin-bottom: 5px;
-        }
-
-        .date {
-            color: var(--blue);
-            font-size: 14px;
-            font-weight: bold;
-        }
+        .timeline-item h3 { color: var(--navy); margin-bottom: 5px; }
+        .date { color: var(--blue); font-size: 14px; font-weight: bold; }
 
         .contact-box {
             background: var(--navy);
@@ -431,31 +321,11 @@
             border-radius: 10px;
         }
 
-        .contact-box h2 {
-            margin-bottom: 12px;
-        }
-
-        .contact-box > p {
-            margin-bottom: 14px;
-        }
-
-        .contact-box a:not(.button) {
-            color: #68e1d2;
-            overflow-wrap: anywhere;
-        }
-
-        .contact-box .button {
-            color: #082d3a;
-        }
-
-        .notice {
-            background: #fff8e8;
-            border-left: 4px solid #e0a52e;
-            border-radius: 4px;
-            padding: 13px 16px;
-            margin-top: 18px;
-            font-size: 14px;
-        }
+        .contact-box h2 { margin-bottom: 12px; }
+        .contact-box > p { margin-bottom: 14px; }
+        .contact-box a:not(.button) { color: #68e1d2; overflow-wrap: anywhere; }
+        .contact-box .button { color: #082d3a; }
+        .email-list a { display: block; margin-top: 4px; }
 
         footer {
             text-align: center;
@@ -465,653 +335,366 @@
             font-size: 13px;
         }
 
-        @media (max-width: 650px) {
-            header {
-                padding: 24px 6%;
-            }
-
-            header h1 {
-                font-size: 23px;
-            }
-
-            nav {
-                padding: 12px 6%;
-                gap: 12px 16px;
-            }
-
-            nav a {
-                font-size: 13px;
-            }
-
-            .hero {
-                padding: 60px 6%;
-            }
-
-            .container {
-                width: 90%;
-            }
-
-            section.content-section {
-                padding: 48px 0;
-            }
-
-            .section-title {
-                font-size: 26px;
-            }
-
-            .project-card {
-                padding: 18px;
-            }
-
-            .media-item img {
-                height: 200px;
-            }
-
-            .contact-box {
-                padding: 23px;
-            }
+        @media (max-width: 900px) {
+            body { padding-right: 185px; }
+            .right-sidebar { width: 185px; }
+            .hero { padding-left: 5%; padding-right: 5%; }
+            .hero-content { padding-right: 230px; }
+            .profile-photo { width: 200px; height: 250px; }
         }
-        
-/* Place profile photo at the far right of the hero */
-.hero-content {
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-    padding-right: 300px;
-}
 
-.profile-photo {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
-    object-position: center top;
-
-    border: 3px solid white;
-    border-radius: 18px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 650px) {
-    .hero-content {
-        padding-right: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .profile-photo {
-        position: static;
-        transform: none;
-        width: 175px;
-        height: 210px;
-        margin: 0 auto 25px;
-    }
-}
-
+        @media (max-width: 650px) {
+            body { padding-right: 145px; }
+            .right-sidebar { width: 145px; padding: 15px 7px; }
+            .right-sidebar h3 { font-size: 15px; margin-bottom: 12px; }
+            .right-sidebar a { font-size: 11px; padding: 8px 5px; }
+            header { padding: 24px 6%; }
+            header h1 { font-size: 23px; }
+            nav { padding: 12px 6%; gap: 12px 16px; }
+            nav a { font-size: 13px; }
+            .hero { padding: 40px 6%; }
+            .hero-content {
+                min-height: 0;
+                padding-right: 0;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 25px;
+                text-align: center;
+            }
+            .hero-text { max-width: 100%; }
+            .profile-photo {
+                position: static;
+                transform: none;
+                width: 150px;
+                height: 180px;
+                margin: 0 auto;
+            }
+            .container { width: 90%; }
+            section.content-section { padding: 48px 0; }
+            .section-title { font-size: 26px; }
+            .project-card { padding: 18px; }
+            .media-item img { height: 200px; }
+            .contact-box { padding: 23px; }
+        }
     </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="header-content">
-        <div>
-            <h1>Mohammed Khadem, PhD</h1>
-            <p>Robotics | Mechatronics | UAVs | Autonomous Systems</p>
+    <!-- RIGHT SIDEBAR: links open in the same browser tab -->
+    <aside class="right-sidebar" aria-label="Academic pages">
+        <h3>Academic Hub</h3>
+        <a href="a.html">🏠 Home</a>
+        <a href="lab.html">🔬 Research Lab</a>
+        <a href="jobs.html">💼 Academic Jobs</a>
+        <a href="publications.html">📚 Publications</a>
+        <a href="projects.html">🤖 Research Projects</a>
+        <a href="resources.html">💻 Learning Resources</a>
+        <a href="cv.html">📄 My CV</a>
+        <a href="collaborations.html">🌍 Collaborations</a>
+        <a href="contact.html">✉️ Contact</a>
+    </aside>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>Mohammed Khadem, PhD</h1>
+                <p>Robotics | Mechatronics | UAVs | Autonomous Systems</p>
+            </div>
+            <div class="header-links">
+                <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+                <a href="https://orcid.org/0000-0002-2638-2938" target="_blank" rel="noopener noreferrer">ORCID</a>
+            </div>
         </div>
+    </header>
 
-        <div class="header-links">
-            <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
-               target="_blank" rel="noopener noreferrer">
-                ResearchGate
-            </a>
+    <!-- MAIN PAGE NAVIGATION -->
+    <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects &amp; Media</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-            <a href="https://orcid.org/0000-0002-2638-2938"
-               target="_blank" rel="noopener noreferrer">
-                ORCID
-            </a>
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="eyebrow">Academic Research Website</p>
+                <h2>Intelligent Robotics and Autonomous Systems</h2>
+                <p>
+                    Welcome to my academic website. I am Mohammed Khadem,
+                    a researcher holding a PhD in Mechatronics Engineering.
+                    My research focuses on robotics, mechatronics,
+                    rehabilitation robotics, UAVs, intelligent control,
+                    and autonomous systems.
+                </p>
+                <a class="button" href="#projects">Explore My Research</a>
+                <a class="button button-outline" href="#contact">Contact &amp; Collaboration</a>
+            </div>
+            <img class="profile-photo" src="images/dr.png" alt="Mohammed Khadem, PhD" loading="eager">
         </div>
-    </div>
-</header>
+    </section>
 
-<!-- NAVIGATION -->
-<nav aria-label="Main navigation">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#projects">Projects & Media</a>
-    <a href="#publications">Publications</a>
-    <a href="#experience">Experience</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <!-- ABOUT -->
+    <section class="content-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-text">
+                <p>
+                    I am Mohammed Khadem, a Mechatronics Engineer and researcher
+                    with a PhD in Mechatronics Engineering from the University
+                    of August 20, 1955, Skikda, Algeria.
+                </p>
+                <p>
+                    I previously conducted research at the Department of Mechanical,
+                    Energy and Management Engineering (DIMEG), University of Calabria,
+                    Italy. My research appointment ran from May 2024 to April 2026.
+                </p>
+                <p>
+                    My work combines mechanical design, mathematical modeling,
+                    simulation, control systems, prototyping, and robotic applications.
+                    My interests include intelligent robotics, autonomous systems,
+                    and practical engineering solutions.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<!-- HOME -->
-<section class="hero" id="home">
-    <div class="hero-content">
-
-        <!-- Text on the left -->
-        <div class="hero-text">
-            <p class="eyebrow">Academic Research Website</p>
-
-            <h2>Intelligent Robotics and Autonomous Systems</h2>
-
-            <p>
-                Welcome to my academic website. I am Mohammed Khadem,
-                a researcher holding a PhD in Mechatronics Engineering.
-                My research focuses on robotics, mechatronics,
-                rehabilitation robotics, UAVs, intelligent control,
+    <!-- RESEARCH INTERESTS -->
+    <section class="content-section alternate" id="research">
+        <div class="container">
+            <h2 class="section-title">Research Interests</h2>
+            <p class="section-intro">
+                My research interests span robotics, mechatronics, intelligent control,
                 and autonomous systems.
             </p>
-
-            <a class="button" href="#projects">
-                Explore My Research
-            </a>
-
-            <a class="button button-outline" href="#contact">
-                Contact & Collaboration
-            </a>
-        </div>
-
-        <!-- Personal photo on the right -->
-        <img
-            class="profile-photo"
-            src="images/dr.png"
-            alt="Mohammed Khadem, PhD"
-            loading="eager">
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section class="content-section" id="about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-
-        <div class="about-text">
-            <p>
-                I am Mohammed Khadem, a Mechatronics Engineer and
-                researcher with a PhD in Mechatronics Engineering
-                from the University of August 20, 1955, Skikda, Algeria.
-            </p>
-
-            <p>
-                I previously conducted research at the Department of
-                Mechanical, Energy and Management Engineering (DIMEG),
-                University of Calabria, Italy. My research appointment
-                ran from May 2024 to April 2026.
-            </p>
-
-            <p>
-                My work combines mechanical design, mathematical
-                modeling, simulation, control systems, prototyping,
-                and robotic applications. My interests include
-                intelligent robotics, autonomous systems, and
-                practical engineering solutions.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- RESEARCH INTERESTS -->
-<section class="content-section alternate" id="research">
-    <div class="container">
-        <h2 class="section-title">Research Interests</h2>
-
-        <p class="section-intro">
-            My research interests span robotics, mechatronics,
-            intelligent control, and autonomous systems.
-        </p>
-
-        <div class="grid">
-            <div class="card">
-                <h3>Cable-Driven Parallel Robots</h3>
-                <p>
-                    Design, kinematic modeling, trajectory generation,
-                    workspace analysis, and control of cable-driven
-                    robotic systems.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Rehabilitation Robotics</h3>
-                <p>
-                    Robotic systems for assisted exercises, drawing,
-                    writing, and rehabilitation applications.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>UAVs and Drones</h3>
-                <p>
-                    Drone platforms, stabilization, inspection,
-                    thermal monitoring, and robotic applications.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Artificial Intelligence</h3>
-                <p>
-                    Machine learning and intelligent algorithms
-                    for robotic perception and decision-making.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Modeling and Control</h3>
-                <p>
-                    Mathematical modeling, simulation, motion control,
-                    system analysis, and experimental validation.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Autonomous Systems</h3>
-                <p>
-                    Mission planning, autonomous operation,
-                    intelligent inspection, and robotic autonomy.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PROJECTS AND VIDEOS -->
-<section class="content-section" id="projects">
-    <div class="container">
-        <h2 class="section-title">Research Projects & Media</h2>
-
-        <p class="section-intro">
-            Selected research topics, robot demonstrations,
-            and related academic publications.
-        </p>
-
-        <!-- PROJECT 1 -->
-        <article class="project-card">
-            <span class="tag">Published Research</span>
-
-            <h3>
-                1. A Pyramidal Cable-Driven Robot for Rehabilitation
-            </h3>
-
-            <p>
-                This research investigates the design and control
-                of a pyramidal cable-driven parallel robot intended
-                for writing and drawing exercises in rehabilitation.
-                The work combines robotic structure design,
-                modeling, and motion-control considerations.
-            </p>
-
-            <h4 class="media-heading">Robot Images</h4>
-
-            <div class="media-grid">
-                <figure class="media-item">
-                    <!-- Replace IMAGE_URL_1 with a direct image URL -->
-                    <img
-                        src="DRONE_IMAGE_URL_1"
-                        alt="Pyramidal cable-driven rehabilitation robot"
-                        loading="lazy"
-                        onerror="this.style.display='none';">
-
-                    <figcaption>
-                        Robot prototype and design
-                    </figcaption>
-                </figure>
-
-                <figure class="media-item">
-                    <!-- Replace IMAGE_URL_2 with a direct image URL -->
-                    <img
-                        src="IMAGE_URL_2"
-                        alt="Cable-driven robot experimental setup"
-                        loading="lazy"
-                        onerror="this.style.display='none';">
-
-                    <figcaption>
-                        Experimental setup
-                    </figcaption>
-                </figure>
-
-                <figure class="media-item">
-                    <!-- Replace IMAGE_URL_3 with a direct image URL -->
-                    <img
-                        src="IMAGE_URL_3"
-                        alt="Cable-driven rehabilitation robot application"
-                        loading="lazy"
-                        onerror="this.style.display='none';">
-
-                    <figcaption>
-                        Robotic application
-                    </figcaption>
-                </figure>
-            </div>
-
-            <h4 class="media-heading">Research Videos</h4>
-
-            <div class="video-grid">
-                <div class="video-item">
-                    <iframe
-                        class="video-frame"
-                        src="https://www.youtube.com/embed/EOSHgQQ1sHY"
-                        title="Research demonstration video 1"
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
-
-                    <p class="video-caption">
-                        Research demonstration 1
-                    </p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Cable-Driven Parallel Robots</h3>
+                    <p>Design, kinematic modeling, trajectory generation, workspace analysis, and control of cable-driven robotic systems.</p>
                 </div>
-
-                <div class="video-item">
-                    <iframe
-                        class="video-frame"
-                        src="https://www.youtube.com/embed/92-YGS5sOMo"
-                        title="Research demonstration video 2"
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
-
-                    <p class="video-caption">
-                        Research demonstration 2
-                    </p>
+                <div class="card">
+                    <h3>Rehabilitation Robotics</h3>
+                    <p>Robotic systems for assisted exercises, drawing, writing, and rehabilitation applications.</p>
                 </div>
-
-                <div class="video-item">
-                    <iframe
-                        class="video-frame"
-                        src="https://www.youtube.com/embed/9CfCM8PZnPs"
-                        title="Research demonstration video 3"
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
-
-                    <p class="video-caption">
-                        Research demonstration 3
-                    </p>
+                <div class="card">
+                    <h3>UAVs and Drones</h3>
+                    <p>Drone platforms, stabilization, inspection, thermal monitoring, and robotic applications.</p>
+                </div>
+                <div class="card">
+                    <h3>Artificial Intelligence</h3>
+                    <p>Machine learning and intelligent algorithms for robotic perception and decision-making.</p>
+                </div>
+                <div class="card">
+                    <h3>Modeling and Control</h3>
+                    <p>Mathematical modeling, simulation, motion control, system analysis, and experimental validation.</p>
+                </div>
+                <div class="card">
+                    <h3>Autonomous Systems</h3>
+                    <p>Mission planning, autonomous operation, intelligent inspection, and robotic autonomy.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <a class="paper-link"
-               href="https://doi.org/10.1017/S026357472300111X"
-               target="_blank" rel="noopener noreferrer">
-                Read the Robotica paper →
-            </a>
-        </article>
-
-        <!-- PROJECT 2 -->
-        <article class="project-card">
-            <span class="tag">UAV Research</span>
-
-            <h3>
-                2. Reconfigurable UAVs for Structural Inspection
-            </h3>
-
-            <p>
-                Research on reconfigurable unmanned aerial vehicles (UAVs) for the 
-                inspection and thermal monitoring of buildings and cultural heritage 
-                sites. The work focuses on a novel adaptive mechanism in which 
-                protective panels transform into landing legs, improving structural 
-                protection during contact with nearby surfaces while supporting safe 
-                landing and inspection operations.
+    <!-- PROJECTS AND VIDEOS -->
+    <section class="content-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Research Projects &amp; Media</h2>
+            <p class="section-intro">
+                Selected research topics, robot demonstrations, and related academic publications.
             </p>
 
-            <h4 class="media-heading">Reconfigurable Drone Design and Mechanism</h4>
+            <!-- PROJECT 1 -->
+            <article class="project-card">
+                <span class="tag">Published Research</span>
+                <h3>1. A Pyramidal Cable-Driven Robot for Rehabilitation</h3>
+                <p>
+                    This research investigates the design and control of a pyramidal
+                    cable-driven parallel robot intended for writing and drawing
+                    exercises in rehabilitation. The work combines robotic structure
+                    design, modeling, and motion-control considerations.
+                </p>
 
-            <div class="media-grid">
-                
-                <figure class="media-item">
-                    <!-- Replace with your own direct image URL -->
-                    <img
-                        src="images/drn1.png"
-                        alt="UAV prototype for inspection"
-                        loading="lazy"
+                <h4 class="media-heading">Robot Images</h4>
+                <div class="media-grid">
+                    <figure class="media-item">
+                        <img src="images/robot1.png" alt="Pyramidal cable-driven rehabilitation robot prototype" loading="lazy">
+                        <figcaption>Robot prototype and design</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/robot2.png" alt="Cable-driven robot experimental setup" loading="lazy">
+                        <figcaption>Experimental setup</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/robot3.png" alt="Cable-driven rehabilitation robot application" loading="lazy">
+                        <figcaption>Robotic application</figcaption>
+                    </figure>
+                </div>
 
-                </figure>
+                <h4 class="media-heading">Research Videos</h4>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/EOSHgQQ1sHY" title="Research demonstration video 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p class="video-caption">Research demonstration 1</p>
+                    </div>
+                    <div class="video-item">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/92-YGS5sOMo" title="Research demonstration video 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p class="video-caption">Research demonstration 2</p>
+                    </div>
+                    <div class="video-item">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/9CfCM8PZnPs" title="Research demonstration video 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p class="video-caption">Research demonstration 3</p>
+                    </div>
+                </div>
 
+                <a class="paper-link" href="https://doi.org/10.1017/S026357472300111X" target="_blank" rel="noopener noreferrer">Read the Robotica paper →</a>
+            </article>
 
-<figure class="media-item">
-    <img
-        src="images/drn.png"
-        alt="Drone thermal camera and inspection equipment"
-        loading="lazy">
-</figure>
+            <!-- PROJECT 2 -->
+            <article class="project-card">
+                <span class="tag">UAV Research</span>
+                <h3>2. Reconfigurable UAVs for Structural Inspection</h3>
+                <p>
+                    Research on reconfigurable unmanned aerial vehicles (UAVs) for
+                    inspection and thermal monitoring of buildings and cultural
+                    heritage sites. The work focuses on an adaptive mechanism in
+                    which protective panels transform into landing legs, helping
+                    protect the drone during contact with nearby surfaces while
+                    supporting landing and inspection operations.
+                </p>
 
+                <h4 class="media-heading">Reconfigurable Drone Design and Mechanism</h4>
+                <div class="media-grid">
+                    <figure class="media-item">
+                        <img src="images/drn1.png" alt="Reconfigurable UAV prototype" loading="lazy">
+                        <figcaption>UAV prototype</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/drn.png" alt="Drone structure and inspection equipment" loading="lazy">
+                        <figcaption>Drone structure and equipment</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/drn2.png" alt="UAV inspection experiment" loading="lazy">
+                        <figcaption>Inspection experiment</figcaption>
+                    </figure>
+                </div>
 
-                <figure class="media-item">
-                    <!-- Replace with your own direct image URL -->
-                    <img
-                        src="images/drn2.png"
-                        alt="UAV inspection experiment"
-                        loading="lazy"
+                <h4 class="media-heading">Drone Research Video</h4>
+                <p>Add a UAV-related video here when you have a dedicated demonstration or experiment.</p>
+                <div class="video-item">
+                    <iframe class="video-frame" src="https://www.youtube.com/embed/wq-0tegsu_k" title="UAV inspection demonstration" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <a class="paper-link" href="https://doi.org/10.1038/s41598-026-73486-8" target="_blank" rel="noopener noreferrer">Read the scientific report paper →</a>
+            </article>
+        </div>
+    </section>
 
-                </figure>
+    <!-- PUBLICATIONS -->
+    <section class="content-section alternate" id="publications">
+        <div class="container">
+            <h2 class="section-title">Selected Publications</h2>
+            <p class="section-intro">
+                Selected research publications and links to my academic profile for additional research outputs.
+            </p>
+
+            <div class="publication">
+                <h3>A Novel Pyramidal Cable-Driven Robot for Exercising and Rehabilitation of Writing Tasks</h3>
+                <p><strong>Journal:</strong> Robotica, 2023</p>
+                <a href="https://doi.org/10.1017/S026357472300111X" target="_blank" rel="noopener noreferrer">View article and DOI →</a>
             </div>
 
-            <h4 class="media-heading">Drone Research Video</h4>
+            <div class="publication">
+                <h3>Design and Validation of a Novel Pyramidal Cable-Driven Robot</h3>
+                <p>Research on the design and validation of a pyramidal cable-driven robotic system.</p>
+                <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">Find publication on ResearchGate →</a>
+            </div>
 
-            <p>
-                Add a UAV-related video here when you have a dedicated
-                demonstration or experiment.
-            </p>
-
-<!-- UAV inspection demonstration -->
-<iframe
-    class="video-frame"
-    src="https://www.youtube.com/embed/wq-0tegsu_k"
-    title="UAV inspection demonstration"
-    loading="lazy"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-</iframe>
-              <a class="paper-link"
-               href="https://doi.org/10.1038/s41598-026-73486-8"
-               target="_blank" rel="noopener noreferrer">
-                Read the scientific report paper →
-            </a>
-        </article>
-
-
-<!-- PUBLICATIONS -->
-<section class="content-section alternate" id="publications">
-    <div class="container">
-        <h2 class="section-title">Selected Publications</h2>
-
-        <p class="section-intro">
-            Selected research publications and links to my academic
-            profile for additional research outputs.
-        </p>
-
-        <div class="publication">
-            <h3>
-                A Novel Pyramidal Cable-Driven Robot for Exercising
-                and Rehabilitation of Writing Tasks
-            </h3>
-
-            <p>
-                <strong>Journal:</strong> Robotica, 2023
-            </p>
-
-            <a href="https://doi.org/10.1017/S026357472300111X"
-               target="_blank" rel="noopener noreferrer">
-                View article and DOI →
-            </a>
+            <div class="publication">
+                <h3>Additional Publications</h3>
+                <p>Visit my ResearchGate profile for further publications and research contributions.</p>
+                <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">View ResearchGate profile →</a>
+            </div>
         </div>
+    </section>
 
-        <div class="publication">
-            <h3>
-                Design and Validation of a Novel Pyramidal
-                Cable-Driven Robot
-            </h3>
-
-            <p>
-                Research on the design and validation of a
-                pyramidal cable-driven robotic system.
-            </p>
-
-            <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
-               target="_blank" rel="noopener noreferrer">
-                Find publication on ResearchGate →
-            </a>
+    <!-- ACADEMIC EXPERIENCE -->
+    <section class="content-section" id="experience">
+        <div class="container">
+            <h2 class="section-title">Academic Experience</h2>
+            <div class="timeline-item">
+                <p class="date">May 2024 – April 2026</p>
+                <h3>Former Research Fellow</h3>
+                <p>Department of Mechanical, Energy and Management Engineering (DIMEG), University of Calabria, Italy.</p>
+            </div>
+            <div class="timeline-item">
+                <p class="date">November 2019 – June 2024</p>
+                <h3>PhD in Mechatronics Engineering</h3>
+                <p>University of August 20, 1955, Skikda, Algeria.</p>
+                <p><strong>Thesis:</strong> Design and Control of a Cable-Driven Parallel Robot with Rehabilitation Application.</p>
+            </div>
+            <div class="timeline-item">
+                <p class="date">2017 – 2019</p>
+                <h3>Master's Degree in Mechatronics</h3>
+                <p>University of Skikda, Algeria.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="publication">
-            <h3>Additional Publications</h3>
-
-            <p>
-                Visit my ResearchGate profile for further publications
-                and research contributions.
+    <!-- CV -->
+    <section class="content-section alternate" id="cv">
+        <div class="container">
+            <h2 class="section-title">Curriculum Vitae</h2>
+            <p class="section-intro">
+                Consult my CV for further details about my education, research experience, technical skills, and publications.
             </p>
-
-            <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
-               target="_blank" rel="noopener noreferrer">
-                View ResearchGate profile →
-            </a>
+            <a class="button" href="cv.pdf">View / Download My CV</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ACADEMIC EXPERIENCE -->
-<section class="content-section" id="experience">
-    <div class="container">
-        <h2 class="section-title">Academic Experience</h2>
-
-        <div class="timeline-item">
-            <p class="date">May 2024 – April 2026</p>
-
-            <h3>Former Research Fellow</h3>
-
-            <p>
-                Department of Mechanical, Energy and Management
-                Engineering (DIMEG), University of Calabria, Italy.
-            </p>
+    <!-- CONTACT -->
+    <section class="content-section" id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Contact and Collaboration</h2>
+                <p>
+                    I welcome academic networking and research collaboration in robotics,
+                    mechatronics, UAVs, control, and autonomous systems.
+                </p>
+                <p><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">Mohammed Khadem</a></p>
+                <p><strong>ORCID:</strong> <a href="https://orcid.org/0000-0002-2638-2938" target="_blank" rel="noopener noreferrer">0000-0002-2638-2938</a></p>
+                <div class="email-list">
+                    <strong>Email:</strong>
+                    <a href="mailto:mohammed.khadem@unical.it">mohammed.khadem@unical.it</a>
+                    <a href="mailto:m.khadem@univ-skikda.dz">m.khadem@univ-skikda.dz</a>
+                    <a href="mailto:mohammedkhadem1994@gmail.com">mohammedkhadem1994@gmail.com</a>
+                </div>
+                <p style="margin-top: 18px;">
+                    <a class="button" href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">Visit ResearchGate</a>
+                    <a class="button" href="https://orcid.org/0000-0002-2638-2938" target="_blank" rel="noopener noreferrer">Visit ORCID</a>
+                </p>
+            </div>
         </div>
+    </section>
 
-        <div class="timeline-item">
-            <p class="date">November 2019 – June 2024</p>
+    <!-- FOOTER -->
+    <footer>
+        <p>© <span id="year"></span> Mohammed Khadem, PhD. Academic Research Website.</p>
+    </footer>
 
-            <h3>PhD in Mechatronics Engineering</h3>
-
-            <p>
-                University of August 20, 1955, Skikda, Algeria.
-            </p>
-
-            <p>
-                <strong>Thesis:</strong>
-                Design and Control of a Cable-Driven Parallel Robot
-                with Rehabilitation Application.
-            </p>
-        </div>
-
-        <div class="timeline-item">
-            <p class="date">2017 – 2019</p>
-
-            <h3>Master's Degree in Mechatronics</h3>
-
-            <p>University of Skikda, Algeria.</p>
-        </div>
-    </div>
-</section>
-
-<!-- CV -->
-<section class="content-section alternate" id="cv">
-    <div class="container">
-        <h2 class="section-title">Curriculum Vitae</h2>
-
-        <p class="section-intro">
-            Consult my CV for further details about my education,
-            research experience, technical skills, and publications.
-        </p>
-
-        <!-- Put your CV PDF in the same folder as index.html -->
-        <a class="button"
-           href="cv.pdf"
-           target="_blank"
-           rel="noopener noreferrer">
-            View / Download My CV
-        </a>
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="content-section" id="contact">
-    <div class="container">
-        <div class="contact-box">
-            <h2>Contact and Collaboration</h2>
-
-            <p>
-                I welcome academic networking and research
-                collaboration in robotics, mechatronics, UAVs,
-                control, and autonomous systems.
-            </p>
-
-            <p>
-                <strong>ResearchGate:</strong>
-                <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
-                   target="_blank" rel="noopener noreferrer">
-                    Mohammed Khadem
-                </a>
-            </p>
-
-            <p>
-                <strong>ORCID:</strong>
-                <a href="https://orcid.org/0000-0002-2638-2938"
-                   target="_blank" rel="noopener noreferrer">
-                    0000-0002-2638-2938
-                </a>
-            </p>
-
-            <!-- Replace with your real academic email -->
-            <p>
-                <strong>Email:</strong>
-                <a href="mailto:mohammed.khadem@unical.it">
-                    mohammed.khadem@unical.it
-                </a>
-                   <a href="mailto:m.khadem@univ-skikda.dz">
-                    m.khadem@univ-skikda.dz
-                </a>
-                   <a href="mailto:mohammedkhadem1994@gmail.com">
-                    mohammedkhadem1994@gmail.com
-                </a>
-            </p>
-
-            <a class="button"
-               href="https://www.researchgate.net/profile/Mohammed-Khadem"
-               target="_blank" rel="noopener noreferrer">
-                Visit ResearchGate
-            </a>
-
-            <a class="button"
-               href="https://orcid.org/0000-0002-2638-2938"
-               target="_blank" rel="noopener noreferrer">
-                Visit ORCID
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>
-        © <span id="year"></span> Mohammed Khadem, PhD.
-        Academic Research Website.
-    </p>
-</footer>
-
-<script>
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
-</script>
-
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
+'''
+
+path = Path("/mnt/data/a_corrected.html")
+path.write_text(html, encoding="utf-8")
+print(f"Created: {path}\nSize: {path.stat().st_size:,} bytes")
