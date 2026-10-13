@@ -2,829 +2,1830 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Mohammed Khadem">
-<meta name="description" content="Academic website of Mohammed Khadem, PhD, in robotics, mechatronics, UAVs, rehabilitation robotics and autonomous systems.">
-<meta name="theme-color" content="#10243e">
-<title>Mohammed Khadem, PhD | Academic Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-    --navy: #10243e;
-    --blue: #176b87;
-    --teal: #22b8a7;
-    --light: #f3f7fb;
-    --text: #253449;
-    --muted: #66778a;
-    --border: #dfe7ef;
-    --white: #ffffff;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 85px; }
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.7;
-    color: var(--text);
-    background: var(--white);
-    padding-right: 225px;
-}
-a { color: var(--blue); text-decoration: none; }
-a:hover { color: var(--teal); }
-img, iframe { max-width: 100%; }
-.container { width: 88%; max-width: 1150px; margin: auto; }
+    <meta name="author" content="Mohammed Khadem">
+    <meta name="description" content="Official academic website of Mohammed Khadem, PhD, featuring research in robotics, mechatronics, cable-driven parallel robots, rehabilitation robotics, UAVs, artificial intelligence, and autonomous systems.">
+    <meta name="keywords" content="Mohammed Khadem, Robotics, Mechatronics, UAV, Cable-Driven Parallel Robots, Rehabilitation Robotics, Autonomous Systems, Artificial Intelligence">
+    <meta name="theme-color" content="#10243e">
 
-/* RIGHT SIDEBAR */
-.sidebar {
-    position: fixed;
-    top: 0; right: 0;
-    width: 225px; height: 100vh;
-    overflow-y: auto;
-    padding: 24px 14px;
-    background: var(--navy);
-    color: white;
-    z-index: 1000;
-    box-shadow: -3px 0 12px #0002;
-}
-.sidebar h3 { font-size: 19px; line-height: 1.4; margin-bottom: 6px; }
-.sidebar .side-subtitle {
-    color: #b8d3e4; font-size: 12px; margin-bottom: 17px;
-}
-.sidebar a {
-    display: block; color: white;
-    padding: 8px 10px; margin-bottom: 3px;
-    border-radius: 6px; font-size: 13px;
-    transition: background .2s;
-}
-.sidebar a:hover, .sidebar a.active {
-    background: #245078; color: #68e1d2;
-}
+    <title>Mohammed Khadem, PhD | Academic Website</title>
 
-/* HEADER AND NAVIGATION */
-header {
-    background: var(--navy); color: white;
-    padding: 25px 7%;
-}
-.header-content {
-    display: flex; justify-content: space-between;
-    align-items: center; gap: 20px; flex-wrap: wrap;
-}
-header h1 { font-size: 27px; line-height: 1.3; }
-header p { color: #c3d9e8; font-size: 14px; margin-top: 6px; }
-.header-links { display: flex; flex-wrap: wrap; gap: 9px; }
-.header-links a {
-    color: white; border: 1px solid #59748d;
-    padding: 6px 11px; border-radius: 5px; font-size: 13px;
-}
-nav {
-    background: #193653; padding: 12px 7%;
-    display: flex; flex-wrap: wrap; gap: 17px;
-    position: sticky; top: 0; z-index: 100;
-}
-nav a { color: white; font-size: 13px; }
+    <style>
+        :root {
+            --navy: #10243e;
+            --navy-light: #193653;
+            --blue: #176b87;
+            --teal: #22b8a7;
+            --light: #f3f7fb;
+            --text: #253449;
+            --muted: #66778a;
+            --border: #dfe7ef;
+            --white: #ffffff;
+            --shadow: 0 8px 25px rgba(16, 36, 62, 0.07);
+        }
 
-/* HERO */
-.hero {
-    background:
-      linear-gradient(90deg, #0a1b30eb, #103850b8),
-      url("images/ro.jpeg") center/cover no-repeat;
-    color: white; padding: 65px 7%;
-}
-.hero-content {
-    display: flex; align-items: center;
-    justify-content: space-between; gap: 35px;
-    max-width: 1150px; margin: auto;
-}
-.hero-text { flex: 1; }
-.eyebrow {
-    color: #75e0d3; text-transform: uppercase;
-    letter-spacing: 2px; font-size: 12px;
-    font-weight: bold; margin-bottom: 12px;
-}
-.hero h2 { font-size: clamp(30px, 4vw, 47px); line-height: 1.2; margin-bottom: 18px; }
-.hero p { color: #e0edf5; margin-bottom: 20px; }
-.profile-photo {
-    width: 230px; height: 280px; object-fit: cover;
-    object-position: center top; border-radius: 16px;
-    border: 3px solid white; box-shadow: 0 10px 30px #0005;
-}
-.button {
-    display: inline-block; background: var(--teal);
-    color: #082d3a; padding: 10px 17px;
-    border-radius: 5px; font-size: 13px;
-    font-weight: bold; margin: 5px 6px 5px 0;
-}
-.button:hover { background: #66dfd0; color: #082d3a; }
-.button-outline { background: transparent; color: white; border: 1px solid white; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* GENERAL SECTIONS */
-section.content-section { padding: 55px 0; scroll-margin-top: 65px; }
-.alternate { background: var(--light); }
-.section-title { color: var(--navy); font-size: 29px; line-height: 1.3; margin-bottom: 13px; }
-.section-intro { color: var(--muted); max-width: 850px; margin-bottom: 25px; }
-.about-text p { margin-bottom: 15px; }
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-}
-.card {
-    background: white; border: 1px solid var(--border);
-    border-radius: 9px; padding: 21px;
-}
-.card h3 { color: var(--blue); font-size: 17px; margin-bottom: 8px; }
-.card p { font-size: 14px; }
-.card ul { padding-left: 19px; font-size: 14px; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
 
-/* PROJECTS AND MEDIA */
-.project-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: 10px; padding: 24px; margin-bottom: 25px;
-    box-shadow: 0 4px 15px #10243e0a;
-}
-.project-card h3 { color: var(--navy); font-size: 20px; margin-bottom: 12px; }
-.project-card > p { margin-bottom: 12px; }
-.tag {
-    display: inline-block; background: #e3f5f3; color: #126b63;
-    border-radius: 4px; padding: 4px 9px;
-    font-size: 12px; font-weight: bold; margin-bottom: 12px;
-}
-.media-heading { color: var(--navy); font-size: 16px; margin: 22px 0 12px; }
-.media-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 15px; margin: 12px 0 20px;
-}
-.media-item { overflow: hidden; border: 1px solid var(--border); border-radius: 8px; }
-.media-item img {
-    display: block; width: 100%; height: 210px;
-    object-fit: contain; background: #edf2f7;
-}
-.media-item figcaption { padding: 9px 11px; color: var(--muted); font-size: 12px; }
-.video-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 17px; margin: 12px 0 20px;
-}
-.video-frame {
-    display: block; width: 100%; aspect-ratio: 16/9;
-    border: 0; border-radius: 8px; background: #101820;
-}
-.video-caption { color: var(--muted); font-size: 13px; margin-top: 7px; }
-.paper-link { display: inline-block; margin-top: 10px; font-weight: bold; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--white);
+            padding-right: 225px;
+        }
 
-/* PUBLICATIONS AND EXPERIENCE */
-.publication { padding: 19px 0; border-bottom: 1px solid var(--border); }
-.publication:last-child { border-bottom: none; }
-.publication h3 { color: var(--navy); font-size: 17px; margin-bottom: 6px; }
-.publication p { font-size: 14px; margin-bottom: 7px; }
-.timeline-item { margin-bottom: 25px; padding-left: 20px; border-left: 3px solid var(--teal); }
-.timeline-item h3 { color: var(--navy); margin-bottom: 5px; }
-.date { color: var(--blue); font-size: 13px; font-weight: bold; }
+        a {
+            color: var(--blue);
+            text-decoration: none;
+        }
 
-/* CONTACT AND FOOTER */
-.contact-box { background: var(--navy); color: white; padding: 30px; border-radius: 10px; }
-.contact-box h2 { margin-bottom: 12px; }
-.contact-box > p { margin-bottom: 12px; }
-.contact-box a:not(.button) { color: #68e1d2; overflow-wrap: anywhere; }
-.contact-box .button { color: #082d3a; }
-.email-list a { display: block; margin-top: 4px; }
-footer { text-align: center; background: #09182a; color: #c4d1df; padding: 23px 15px; font-size: 13px; }
-.small-note { color: var(--muted); font-size: 12px; margin-top: 12px; }
-ul.content-list { padding-left: 21px; margin: 10px 0; }
-ul.content-list li { margin-bottom: 7px; }
+        a:hover {
+            color: var(--teal);
+        }
 
-/* RESPONSIVE */
-@media (max-width: 850px) {
-    body { padding-right: 190px; }
-    .sidebar { width: 190px; }
-    .hero-content { gap: 20px; }
-    .profile-photo { width: 180px; height: 230px; }
-}
-@media (max-width: 600px) {
-    body { padding-right: 0; }
-    .sidebar {
-        position: relative; width: 100%; height: auto;
-        max-height: none; padding: 13px;
-    }
-    .sidebar h3 { margin-bottom: 5px; }
-    .sidebar .side-subtitle { margin-bottom: 8px; }
-    .sidebar a {
-        display: inline-block; margin: 3px 2px;
-        padding: 7px 9px; background: #193653;
-    }
-    header { padding: 22px 6%; }
-    header h1 { font-size: 23px; }
-    nav { padding: 12px 6%; gap: 10px 14px; }
-    .hero { padding: 38px 6%; }
-    .hero-content { flex-direction: column-reverse; text-align: center; }
-    .profile-photo { width: 145px; height: 175px; }
-    .container { width: 91%; }
-    section.content-section { padding: 42px 0; }
-    .section-title { font-size: 25px; }
-    .project-card { padding: 17px; }
-    .contact-box { padding: 21px; }
-}
-</style>
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 3px;
+        }
+
+        img,
+        iframe {
+            max-width: 100%;
+        }
+
+        img {
+            height: auto;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        /* RIGHT SIDEBAR */
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 225px;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 24px 14px;
+            background: var(--navy);
+            color: white;
+            z-index: 1000;
+            box-shadow: -3px 0 12px #0002;
+        }
+
+        .sidebar h3 {
+            font-size: 19px;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .sidebar .side-subtitle {
+            color: #b8d3e4;
+            font-size: 12px;
+            margin-bottom: 17px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 8px 10px;
+            margin-bottom: 3px;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #245078;
+            color: #68e1d2;
+        }
+
+        .sidebar .lab-link {
+            border: 1px solid #3b8b91;
+            margin-top: 9px;
+            color: #75e0d3;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 25px 7%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 27px;
+            line-height: 1.3;
+        }
+
+        header p {
+            color: #c3d9e8;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .header-links a {
+            color: white;
+            border: 1px solid #59748d;
+            padding: 6px 11px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .header-links a:hover {
+            background: #245078;
+            border-color: var(--teal);
+        }
+
+        /* TOP NAVIGATION */
+
+        nav {
+            background: var(--navy-light);
+            padding: 12px 7%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 17px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            font-size: 13px;
+        }
+
+        nav a:hover {
+            color: #75e0d3;
+        }
+
+        /* HERO */
+
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(10, 27, 48, 0.94), rgba(16, 56, 80, 0.78)),
+                url("images/ro.jpeg") center / cover no-repeat;
+            color: white;
+            padding: 65px 7%;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .eyebrow {
+            color: #75e0d3;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .hero h2 {
+            font-size: clamp(30px, 4vw, 47px);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #e0edf5;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo {
+            width: 230px;
+            height: 280px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 16px;
+            border: 3px solid white;
+            box-shadow: 0 10px 30px #0005;
+        }
+
+        /* BUTTONS */
+
+        .button {
+            display: inline-block;
+            background: var(--teal);
+            color: #082d3a;
+            padding: 10px 17px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 5px 6px 5px 0;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .button:hover {
+            background: #66dfd0;
+            color: #082d3a;
+            transform: translateY(-1px);
+        }
+
+        .button-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .button-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section.content-section {
+            padding: 55px 0;
+            scroll-margin-top: 65px;
+        }
+
+        .alternate {
+            background: var(--light);
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-size: 29px;
+            line-height: 1.3;
+            margin-bottom: 13px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 21px;
+            box-shadow: 0 3px 12px rgba(16, 36, 62, 0.025);
+        }
+
+        .card h3 {
+            color: var(--blue);
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+        }
+
+        .card ul {
+            padding-left: 19px;
+            font-size: 14px;
+        }
+
+        .card li {
+            margin-bottom: 6px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* PROJECTS */
+
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .project-card h3 {
+            color: var(--navy);
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .project-card > p {
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e3f5f3;
+            color: #126b63;
+            border-radius: 4px;
+            padding: 4px 9px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .tag.proposed {
+            background: #fff3d9;
+            color: #775014;
+        }
+
+        .media-heading {
+            color: var(--navy);
+            font-size: 16px;
+            margin: 22px 0 12px;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 15px;
+            margin: 12px 0 20px;
+        }
+
+        .media-item {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: white;
+        }
+
+        .media-item img {
+            display: block;
+            width: 100%;
+            height: 210px;
+            object-fit: contain;
+            background: #edf2f7;
+        }
+
+        .media-item figcaption {
+            padding: 9px 11px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 17px;
+            margin: 12px 0 20px;
+        }
+
+        .video-frame {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            border-radius: 8px;
+            background: #101820;
+        }
+
+        .video-caption {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 7px;
+        }
+
+        .paper-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* PUBLICATIONS */
+
+        .publication {
+            padding: 19px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .publication h3 {
+            color: var(--navy);
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .publication p {
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        /* EXPERIENCE TIMELINE */
+
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--teal);
+        }
+
+        .timeline-item h3 {
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* LAB FEATURE */
+
+        .lab-feature {
+            background: linear-gradient(135deg, #10243e, #176b87);
+            color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .lab-feature h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .lab-feature p {
+            color: #e0edf5;
+            margin-bottom: 14px;
+        }
+
+        .lab-feature .button {
+            margin-top: 8px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: var(--navy);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 12px;
+        }
+
+        .contact-box > p {
+            margin-bottom: 12px;
+        }
+
+        .contact-box a:not(.button) {
+            color: #68e1d2;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-box .button {
+            color: #082d3a;
+        }
+
+        .email-list a {
+            display: block;
+            margin-top: 4px;
+        }
+
+        .small-note {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        ul.content-list {
+            padding-left: 21px;
+            margin: 10px 0;
+        }
+
+        ul.content-list li {
+            margin-bottom: 7px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            background: #09182a;
+            color: #c4d1df;
+            padding: 23px 15px;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #75e0d3;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            body {
+                padding-right: 190px;
+            }
+
+            .sidebar {
+                width: 190px;
+            }
+
+            .hero-content {
+                gap: 20px;
+            }
+
+            .profile-photo {
+                width: 180px;
+                height: 230px;
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding-right: 0;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                max-height: none;
+                padding: 13px;
+            }
+
+            .sidebar h3 {
+                margin-bottom: 5px;
+            }
+
+            .sidebar .side-subtitle {
+                margin-bottom: 8px;
+            }
+
+            .sidebar a {
+                display: inline-block;
+                margin: 3px 2px;
+                padding: 7px 9px;
+                background: #193653;
+            }
+
+            header {
+                padding: 22px 6%;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            nav {
+                padding: 12px 6%;
+                gap: 10px 14px;
+            }
+
+            .hero {
+                padding: 38px 6%;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .profile-photo {
+                width: 145px;
+                height: 175px;
+            }
+
+            .container {
+                width: 91%;
+            }
+
+            section.content-section {
+                padding: 42px 0;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+
+            .project-card {
+                padding: 17px;
+            }
+
+            .contact-box,
+            .lab-feature {
+                padding: 21px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- SIDE MENU: all internal links stay on this page -->
-<aside class="sidebar" aria-label="Academic pages">
-    <h3>Academic Hub</h3>
-    <p class="side-subtitle">Research · Learning · Collaboration</p>
-    <a href="#home">🏠 Home</a>
-    <a href="#about">👨‍🎓 About Me</a>
-    <a href="#research">🔬 Research</a>
-    <a href="#projects">🤖 Projects & Media</a>
-    <a href="#publications">📚 Publications</a>
-    <a href="#experience">🎓 Experience</a>
-    <a href="#lab">🧪 Research Lab</a>
-    <a href="#jobs">💼 Academic Jobs</a>
-    <a href="#collaborations">🌍 Collaborations</a>
-    <a href="#resources">📖 Resources</a>
-    <a href="#tools">🛠 Research Tools</a>
-    <a href="#courses">💻 Courses & Tutorials</a>
-    <a href="#news">📰 Academic News</a>
-    <a href="#cv">📄 My CV</a>
-    <a href="#contact">✉️ Contact</a>
-</aside>
+    <!-- SIDE MENU -->
+    <aside class="sidebar" aria-label="Academic website navigation">
+        <h3>Academic Hub</h3>
+        <p class="side-subtitle">Research · Learning · Collaboration</p>
 
-<header>
-    <div class="header-content">
-        <div>
-            <h1>Mohammed Khadem, PhD</h1>
-            <p>Robotics | Mechatronics | UAVs | Autonomous Systems</p>
-        </div>
-        <div class="header-links">
-            <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-            <a href="https://orcid.org/0000-0002-2638-2938" target="_blank" rel="noopener noreferrer">ORCID</a>
-        </div>
-    </div>
-</header>
+        <a href="#home">🏠 Home</a>
+        <a href="#about">👨‍🎓 About Me</a>
+        <a href="#research">🔬 Research</a>
+        <a href="#projects">🤖 Projects &amp; Media</a>
+        <a href="#publications">📚 Publications</a>
+        <a href="#experience">🎓 Experience</a>
+        <a href="#lab">🧪 Research Lab</a>
+        <a href="#jobs">💼 Academic Jobs</a>
+        <a href="#collaborations">🌍 Collaborations</a>
+        <a href="#resources">📖 Resources</a>
+        <a href="#tools">🛠 Research Tools</a>
+        <a href="#courses">💻 Courses &amp; Tutorials</a>
+        <a href="#news">📰 Academic Resources</a>
+        <a href="#cv">📄 My CV</a>
+        <a href="#contact">✉️ Contact</a>
 
-<nav aria-label="Main navigation">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#experience">Experience</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
-</nav>
+        <a class="lab-link" href="ilrmai.html">🌐 Visit ILRMAI →</a>
+    </aside>
 
-<!-- HOME -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <div class="hero-text">
-            <p class="eyebrow">Academic Research Website</p>
-            <h2>Intelligent Robotics and Autonomous Systems</h2>
-            <p>
-                Welcome to my academic website. I am Mohammed Khadem,
-                a researcher holding a PhD in Mechatronics Engineering.
-                My research focuses on robotics, mechatronics,
-                rehabilitation robotics, UAVs, intelligent control,
-                and autonomous systems.
-            </p>
-            <a class="button" href="#projects">Explore My Research</a>
-            <a class="button button-outline" href="#contact">Contact &amp; Collaboration</a>
-        </div>
-        <img class="profile-photo" src="images/dre.png" alt="Mohammed Khadem, PhD">
-    </div>
-</section>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>Mohammed Khadem, PhD</h1>
+                <p>Robotics | Mechatronics | UAVs | Autonomous Systems</p>
+            </div>
 
-<!-- ABOUT -->
-<section class="content-section" id="about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-text">
-            <p>
-                I am Mohammed Khadem, a Mechatronics Engineer and researcher
-                with a PhD in Mechatronics Engineering from the University
-                of August 20, 1955, Skikda, Algeria.
-            </p>
-            <p>
-                I previously conducted research at the Department of Mechanical,
-                Energy and Management Engineering (DIMEG), University of Calabria,
-                Italy. My research appointment ran from May 2024 to April 2026.
-            </p>
-            <p>
-                My work combines mechanical design, mathematical modeling,
-                simulation, control systems, prototyping, and robotic applications.
-                My interests include intelligent robotics, autonomous systems,
-                UAV inspection, and practical engineering solutions.
-            </p>
-        </div>
-    </div>
-</section>
+            <div class="header-links">
+                <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
+                   target="_blank" rel="noopener noreferrer">ResearchGate</a>
 
-<!-- RESEARCH INTERESTS -->
-<section class="content-section alternate" id="research">
-    <div class="container">
-        <h2 class="section-title">Research Interests</h2>
-        <p class="section-intro">My research spans robotics, mechatronics, intelligent control, and autonomous systems.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>Cable-Driven Parallel Robots</h3>
-                <p>Design, kinematic modeling, trajectory generation, workspace analysis, and control of cable-driven robotic systems.</p>
-            </div>
-            <div class="card">
-                <h3>Rehabilitation Robotics</h3>
-                <p>Robotic systems for assisted exercises, drawing, writing, and rehabilitation applications.</p>
-            </div>
-            <div class="card">
-                <h3>UAVs and Drones</h3>
-                <p>Drone platforms, stabilization, structural inspection, thermal monitoring, and reconfigurable protective mechanisms.</p>
-            </div>
-            <div class="card">
-                <h3>Artificial Intelligence</h3>
-                <p>Machine learning and intelligent algorithms for robotic perception, decision-making, and autonomous operation.</p>
-            </div>
-            <div class="card">
-                <h3>Modeling and Control</h3>
-                <p>Mathematical modeling, simulation, motion control, system analysis, and engineering validation.</p>
-            </div>
-            <div class="card">
-                <h3>Autonomous Systems</h3>
-                <p>Mission planning, energy-aware operation, intelligent inspection, and robotic autonomy.</p>
+                <a href="https://orcid.org/0000-0002-2638-2938"
+                   target="_blank" rel="noopener noreferrer">ORCID</a>
             </div>
         </div>
-    </div>
-</section>
+    </header>
 
-<!-- PROJECTS -->
-<section class="content-section" id="projects">
-    <div class="container">
-        <h2 class="section-title">Research Projects &amp; Media</h2>
-        <p class="section-intro">Selected research topics, robot demonstrations, and related academic publications.</p>
+    <!-- MAIN NAVIGATION -->
+    <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#lab">ILRMAI</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        <article class="project-card">
-            <span class="tag">Published Research</span>
-            <h3>1. A Pyramidal Cable-Driven Robot for Rehabilitation</h3>
-            <p>
-                This research investigates the design and control of a pyramidal
-                cable-driven parallel robot intended for writing and drawing
-                exercises in rehabilitation. The work combines robotic structure
-                design, modeling, and motion-control considerations.
-            </p>
+    <main>
 
-            <h4 class="media-heading">Robot Images</h4>
-            <div class="media-grid">
-                <figure class="media-item">
-                    <img src="images/robot1.png" alt="Pyramidal cable-driven rehabilitation robot prototype" loading="lazy">
-                    <figcaption>Robot prototype and design</figcaption>
-                </figure>
-                <figure class="media-item">
-                    <img src="images/robot2.png" alt="Cable-driven robot experimental setup" loading="lazy">
-                    <figcaption>Experimental setup</figcaption>
-                </figure>
-                <figure class="media-item">
-                    <img src="images/robot3.png" alt="Cable-driven rehabilitation robot application" loading="lazy">
-                    <figcaption>Robotic application</figcaption>
-                </figure>
-            </div>
+        <!-- HOME -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">Academic Research Website</p>
 
-            <h4 class="media-heading">Research Videos</h4>
-            <div class="video-grid">
-                <div>
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/EOSHgQQ1sHY" title="Cable-driven robot demonstration 1" loading="lazy" allowfullscreen></iframe>
-                    <p class="video-caption">Research demonstration 1</p>
+                    <h2>Intelligent Robotics and Autonomous Systems</h2>
+
+                    <p>
+                        Welcome to my academic website. I am Mohammed Khadem,
+                        a researcher holding a PhD in Mechatronics Engineering.
+                        My research interests include robotics, mechatronics,
+                        rehabilitation robotics, unmanned aerial vehicles (UAVs),
+                        intelligent control, and autonomous systems.
+                    </p>
+
+                    <a class="button" href="#projects">Explore My Research</a>
+                    <a class="button button-outline" href="#contact">
+                        Contact &amp; Collaboration
+                    </a>
+                    <a class="button button-outline" href="ilrmai.html">
+                        Explore ILRMAI
+                    </a>
                 </div>
-                <div>
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/92-YGS5sOMo" title="Cable-driven robot demonstration 2" loading="lazy" allowfullscreen></iframe>
-                    <p class="video-caption">Research demonstration 2</p>
-                </div>
-                <div>
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/9CfCM8PZnPs" title="Cable-driven robot demonstration 3" loading="lazy" allowfullscreen></iframe>
-                    <p class="video-caption">Research demonstration 3</p>
+
+                <img
+                    class="profile-photo"
+                    src="images/dre.png"
+                    alt="Mohammed Khadem, PhD"
+                    fetchpriority="high"
+                >
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="content-section" id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+
+                <div class="about-text">
+                    <p>
+                        I am Mohammed Khadem, a Mechatronics Engineer and
+                        researcher with a PhD in Mechatronics Engineering from
+                        the University of August 20, 1955, Skikda, Algeria.
+                    </p>
+
+                    <p>
+                        I previously conducted research at the Department of
+                        Mechanical, Energy and Management Engineering (DIMEG),
+                        University of Calabria, Italy. My research appointment
+                        ran from May 2024 to April 2026.
+                    </p>
+
+                    <p>
+                        My work combines mechanical design, mathematical
+                        modeling, simulation, control systems, prototyping,
+                        and robotic applications. My research interests include
+                        intelligent robotics, autonomous systems, UAV inspection,
+                        and practical engineering solutions.
+                    </p>
+
+                    <p>
+                        I am interested in academic collaboration, interdisciplinary
+                        research, and the development of robotic technologies
+                        addressing real-world engineering challenges.
+                    </p>
+
+                    <p>
+                        <strong>Research profiles:</strong>
+                        <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
+                           target="_blank" rel="noopener noreferrer">ResearchGate</a>
+                        |
+                        <a href="https://orcid.org/0000-0002-2638-2938"
+                           target="_blank" rel="noopener noreferrer">ORCID</a>
+                    </p>
                 </div>
             </div>
-            <a class="paper-link" href="https://doi.org/10.1017/S026357472300111X" target="_blank" rel="noopener noreferrer">Read the Robotica paper →</a>
-        </article>
+        </section>
 
-        <article class="project-card">
-            <span class="tag">UAV Research</span>
-            <h3>2. Reconfigurable UAVs for Structural Inspection</h3>
-            <p>
-                Research on reconfigurable unmanned aerial vehicles (UAVs) for
-                inspection and thermal monitoring of buildings and cultural
-                heritage sites. The concept features protective panels that
-                transform into landing legs, helping protect the drone during
-                contact with nearby surfaces while supporting landing operations.
-            </p>
+        <!-- RESEARCH INTERESTS -->
+        <section class="content-section alternate" id="research">
+            <div class="container">
+                <h2 class="section-title">Research Interests</h2>
 
+                <p class="section-intro">
+                    My research spans robotics, mechatronics, intelligent
+                    control, and autonomous systems.
+                </p>
 
-<h4 class="media-heading">Drone Research Videos</h4>
+                <div class="grid">
+                    <article class="card">
+                        <h3>Cable-Driven Parallel Robots</h3>
+                        <p>
+                            Design, kinematic modeling, trajectory generation,
+                            workspace analysis, and control of cable-driven
+                            robotic systems.
+                        </p>
+                    </article>
 
-<div class="video-grid">
-    <div class="video-item">
-        <iframe
-            class="video-frame"
-            src="https://www.youtube.com/embed/VIDEO_ID_1"
-            title="Reconfigurable UAV demonstration 1"
-            loading="lazy"
-            allowfullscreen>
-        </iframe>
-        <p class="video-caption">UAV Prototype and Design</p>
-    </div>
+                    <article class="card">
+                        <h3>Rehabilitation Robotics</h3>
+                        <p>
+                            Robotic systems for assisted exercises, drawing,
+                            writing, and rehabilitation applications.
+                        </p>
+                    </article>
 
-    <div class="video-item">
-        <iframe
-            class="video-frame"
-            src="https://www.youtube.com/embed/VIDEO_ID_2"
-            title="Reconfigurable UAV demonstration 2"
-            loading="lazy"
-            allowfullscreen>
-        </iframe>
-        <p class="video-caption">Reconfigurable Shield Mechanism</p>
-    </div>
+                    <article class="card">
+                        <h3>UAVs and Drones</h3>
+                        <p>
+                            Drone platforms, stabilization, structural inspection,
+                            thermal monitoring, and reconfigurable protective
+                            mechanisms.
+                        </p>
+                    </article>
 
-    <div class="video-item">
-        <iframe
-            class="video-frame"
-            src="https://www.youtube.com/embed/wq-0tegsu_k"
-            title="UAV inspection demonstration 3"
-            loading="lazy"
-            allowfullscreen>
-        </iframe>
-        <p class="video-caption">UAV Inspection Demonstration</p>
-    </div>
-</div>
+                    <article class="card">
+                        <h3>Artificial Intelligence</h3>
+                        <p>
+                            Machine learning and intelligent algorithms for
+                            robotic perception, decision-making, and autonomous
+                            operation.
+                        </p>
+                    </article>
 
-<a class="paper-link"
-   href="https://doi.org/10.1038/s41598-026-73486-8"
-   target="_blank"
-   rel="noopener noreferrer">
-   Read the scientific report →
-</a>
+                    <article class="card">
+                        <h3>Modeling and Control</h3>
+                        <p>
+                            Mathematical modeling, simulation, motion control,
+                            system analysis, and engineering validation.
+                        </p>
+                    </article>
 
-        </article>
-    </div>
-</section>
+                    <article class="card">
+                        <h3>Autonomous Systems</h3>
+                        <p>
+                            Mission planning, energy-aware operation, intelligent
+                            inspection, and robotic autonomy.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-<!-- PUBLICATIONS -->
-<section class="content-section alternate" id="publications">
-    <div class="container">
-        <h2 class="section-title">Selected Publications</h2>
-        <p class="section-intro">Selected research outputs. Visit my academic profile for further publications.</p>
+        <!-- PROJECTS -->
+        <section class="content-section" id="projects">
+            <div class="container">
+                <h2 class="section-title">Research Projects &amp; Media</h2>
 
-        <div class="publication">
-            <h3>A Novel Pyramidal Cable-Driven Robot for Exercising and Rehabilitation of Writing Tasks</h3>
-            <p><strong>Journal:</strong> Robotica, 2023</p>
-            <a href="https://doi.org/10.1017/S026357472300111X" target="_blank" rel="noopener noreferrer">View article and DOI →</a>
-        </div>
-        <div class="publication">
-            <h3>Design and Validation of a Novel Pyramidal Cable-Driven Robot</h3>
-            <p>Research on the design and validation of a pyramidal cable-driven robotic system.</p>
-            <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">Find publications on ResearchGate →</a>
-        </div>
-        <div class="publication">
-            <h3>Additional Publications and Conference Papers</h3>
-            <p>For further journal articles, conference papers, and research contributions, visit my ResearchGate profile.</p>
-            <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">View ResearchGate profile →</a>
-        </div>
-    </div>
-</section>
+                <p class="section-intro">
+                    Selected research topics, robot demonstrations, and
+                    links to related academic publications.
+                </p>
 
-<!-- EXPERIENCE -->
-<section class="content-section" id="experience">
-    <div class="container">
-        <h2 class="section-title">Academic Experience</h2>
-        <div class="timeline-item">
-            <p class="date">May 2024 – April 2026</p>
-            <h3>Former Research Fellow</h3>
-            <p>Department of Mechanical, Energy and Management Engineering (DIMEG), University of Calabria, Italy.</p>
-        </div>
-        <div class="timeline-item">
-            <p class="date">November 2019 – June 2024</p>
-            <h3>PhD in Mechatronics Engineering</h3>
-            <p>University of August 20, 1955, Skikda, Algeria.</p>
-            <p><strong>Thesis:</strong> Design and Control of a Cable-Driven Parallel Robot with Rehabilitation Application.</p>
-        </div>
-        <div class="timeline-item">
-            <p class="date">2017 – 2019</p>
-            <h3>Master's Degree in Mechatronics</h3>
-            <p>University of Skikda, Algeria.</p>
-        </div>
-    </div>
-</section>
+                <!-- PROJECT 1 -->
+                <article class="project-card">
+                    <span class="tag">Published Research</span>
 
-<!-- RESEARCH LAB -->
-<section class="content-section alternate" id="lab">
-    <div class="container">
-        <h2 class="section-title">Virtual Research Laboratory</h2>
-        <p class="section-intro">
-            A virtual research initiative focused on robotics, mechatronics,
-            autonomous systems, UAVs, and intelligent engineering.
+                    <h3>
+                        1. A Pyramidal Cable-Driven Robot for Rehabilitation
+                    </h3>
+
+                    <p>
+                        This research investigates the design and control of a
+                        pyramidal cable-driven parallel robot intended for
+                        writing and drawing exercises in rehabilitation.
+                        The work combines robotic structure design, modeling,
+                        and motion-control considerations.
+                    </p>
+
+                    <h4 class="media-heading">Robot Images</h4>
+
+                    <div class="media-grid">
+                        <figure class="media-item">
+                            <img
+                                src="images/robot1.png"
+                                alt="Pyramidal cable-driven rehabilitation robot prototype"
+                                loading="lazy"
+                            >
+                            <figcaption>Robot prototype and design</figcaption>
+                        </figure>
+
+                        <figure class="media-item">
+                            <img
+                                src="images/robot2.png"
+                                alt="Cable-driven robot experimental setup"
+                                loading="lazy"
+                            >
+                            <figcaption>Experimental setup</figcaption>
+                        </figure>
+
+                        <figure class="media-item">
+                            <img
+                                src="images/robot3.png"
+                                alt="Cable-driven rehabilitation robot application"
+                                loading="lazy"
+                            >
+                            <figcaption>Robotic application</figcaption>
+                        </figure>
+                    </div>
+
+                    <h4 class="media-heading">Research Videos</h4>
+
+                    <div class="video-grid">
+                        <div>
+                            <iframe
+                                class="video-frame"
+                                src="https://www.youtube.com/embed/EOSHgQQ1sHY"
+                                title="Cable-driven robot demonstration 1"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                            <p class="video-caption">
+                                Research demonstration 1
+                            </p>
+                        </div>
+
+                        <div>
+                            <iframe
+                                class="video-frame"
+                                src="https://www.youtube.com/embed/92-YGS5sOMo"
+                                title="Cable-driven robot demonstration 2"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                            <p class="video-caption">
+                                Research demonstration 2
+                            </p>
+                        </div>
+
+                        <div>
+                            <iframe
+                                class="video-frame"
+                                src="https://www.youtube.com/embed/9CfCM8PZnPs"
+                                title="Cable-driven robot demonstration 3"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                            <p class="video-caption">
+                                Research demonstration 3
+                            </p>
+                        </div>
+                    </div>
+
+                    <a class="paper-link"
+                       href="https://doi.org/10.1017/S026357472300111X"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Read the Robotica paper →
+                    </a>
+                </article>
+
+                <!-- PROJECT 2 -->
+                <article class="project-card">
+                    <span class="tag">UAV Research</span>
+
+                    <h3>
+                        2. Reconfigurable UAVs for Structural Inspection
+                    </h3>
+
+                    <p>
+                        This research explores a reconfigurable protective
+                        mechanism for unmanned aerial vehicles used in structural
+                        inspection and thermal monitoring of buildings and
+                        cultural heritage sites.
+                    </p>
+
+                    <p>
+                        The concept uses protective panels that can change
+                        configuration from a protective shield around the drone
+                        into landing legs. The mechanism is intended to support
+                        safer interaction with nearby surfaces and provide
+                        a landing configuration when required.
+                    </p>
+
+                    <p>
+                        Related research directions include drone stabilization,
+                        visual and thermal inspection, structural-condition
+                        monitoring, and autonomous inspection planning.
+                    </p>
+
+                    <h4 class="media-heading">Drone Research Images</h4>
+
+                    <div class="media-grid">
+                        <figure class="media-item">
+                            <img
+                                src="images/drn.png"
+                                alt="Reconfigurable UAV with protective panels and landing-leg configuration"
+                                loading="lazy"
+                            >
+                            <figcaption>
+                                Reconfigurable UAV concept
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <h4 class="media-heading">Drone Research Video</h4>
+
+                    <div class="video-grid">
+                        <div>
+                            <iframe
+                                class="video-frame"
+                                src="https://www.youtube.com/embed/wq-0tegsu_k"
+                                title="UAV inspection demonstration"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                            <p class="video-caption">
+                                UAV inspection demonstration
+                            </p>
+                        </div>
+                    </div>
+
+                    <a class="paper-link"
+                       href="https://doi.org/10.1038/s41598-026-73486-8"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Read the scientific article →
+                    </a>
+                </article>
+
+                <!-- PROJECT 3 -->
+                <article class="project-card">
+                    <span class="tag proposed">Research Concept</span>
+
+                    <h3>
+                        3. Autonomous Battery Replacement and Mission Continuation
+                    </h3>
+
+                    <p>
+                        A proposed research direction for long-duration UAV
+                        inspection. The concept focuses on energy-aware mission
+                        planning, autonomous return to a battery replacement
+                        station, mission-state storage, and resumption of an
+                        interrupted inspection task.
+                    </p>
+
+                    <p>
+                        This topic is intended as a future research direction;
+                        its description should not be interpreted as evidence
+                        that a complete autonomous battery-swapping system has
+                        already been built or experimentally validated.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section class="content-section alternate" id="publications">
+            <div class="container">
+                <h2 class="section-title">Selected Publications</h2>
+
+                <p class="section-intro">
+                    Selected research outputs. Visit my academic profile for
+                    additional journal articles and conference papers.
+                </p>
+
+                <div class="publication">
+                    <h3>
+                        A Novel Pyramidal Cable-Driven Robot for Exercising
+                        and Rehabilitation of Writing Tasks
+                    </h3>
+
+                    <p><strong>Journal:</strong> Robotica, 2023</p>
+
+                    <a href="https://doi.org/10.1017/S026357472300111X"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View article and DOI →
+                    </a>
+                </div>
+
+                <div class="publication">
+                    <h3>
+                        Additional Journal Articles and Conference Papers
+                    </h3>
+
+                    <p>
+                        Explore my academic profile for further publications
+                        related to cable-driven parallel robots, mechatronics,
+                        modeling, simulation, and robotic applications.
+                    </p>
+
+                    <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Find publications on ResearchGate →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="content-section" id="experience">
+            <div class="container">
+                <h2 class="section-title">Academic Experience</h2>
+
+                <div class="timeline-item">
+                    <p class="date">May 2024 – April 2026</p>
+                    <h3>Former Research Fellow</h3>
+                    <p>
+                        Department of Mechanical, Energy and Management
+                        Engineering (DIMEG), University of Calabria, Italy.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="date">November 2019 – June 2024</p>
+                    <h3>PhD in Mechatronics Engineering</h3>
+                    <p>
+                        University of August 20, 1955, Skikda, Algeria.
+                    </p>
+                    <p>
+                        <strong>Thesis:</strong> Design and Control of a
+                        Cable-Driven Parallel Robot with Rehabilitation Application.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="date">2017 – 2019</p>
+                    <h3>Master's Degree in Mechatronics</h3>
+                    <p>University of Skikda, Algeria.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH LAB -->
+        <section class="content-section alternate" id="lab">
+            <div class="container">
+                <h2 class="section-title">
+                    International Laboratory for Robotics, Mechatronics
+                    and Artificial Intelligence
+                </h2>
+
+                <p class="section-intro">
+                    Discover ILRMAI, a virtual research initiative intended
+                    to support collaboration and idea development across
+                    robotics, mechatronics, artificial intelligence, and
+                    autonomous systems.
+                </p>
+
+                <div class="lab-feature">
+                    <h3>ILRMAI — Virtual Research Initiative</h3>
+
+                    <p>
+                        The initiative aims to connect researchers, engineers,
+                        and students interested in robotic systems, intelligent
+                        engineering, UAV technologies, and interdisciplinary
+                        research.
+                    </p>
+
+                    <p>
+                        Its proposed activities include developing research
+                        concepts, sharing technical knowledge, identifying
+                        collaboration opportunities, and supporting future
+                        joint publications and projects.
+                    </p>
+
+                    <a class="button" href="ilrmai.html">
+                        Visit the ILRMAI Website →
+                    </a>
+
+                    <a class="button button-outline" href="#contact">
+                        Discuss Collaboration
+                    </a>
+                </div>
+
+                <p class="small-note">
+                    ILRMAI is presented as a virtual research initiative.
+                    This website does not claim formal institutional
+                    accreditation, official university affiliation, or
+                    the existence of a physically equipped laboratory.
+                </p>
+            </div>
+        </section>
+
+        <!-- ACADEMIC JOBS -->
+        <section class="content-section" id="jobs">
+            <div class="container">
+                <h2 class="section-title">
+                    Academic Jobs &amp; Research Opportunities
+                </h2>
+
+                <p class="section-intro">
+                    Useful starting points for finding postdoctoral,
+                    research scientist, faculty, and robotics-related
+                    opportunities.
+                </p>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3>EURAXESS</h3>
+                        <p>Research jobs and opportunities across Europe.</p>
+                        <a href="https://euraxess.ec.europa.eu/jobs"
+                           target="_blank" rel="noopener noreferrer">
+                            Search research jobs →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Academic Positions</h3>
+                        <p>
+                            Academic and research vacancies at universities
+                            worldwide.
+                        </p>
+                        <a href="https://academicpositions.com/"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore positions →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Nature Careers</h3>
+                        <p>
+                            Research and academic career opportunities in
+                            science and engineering.
+                        </p>
+                        <a href="https://www.nature.com/naturecareers"
+                           target="_blank" rel="noopener noreferrer">
+                            Visit Nature Careers →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>FindAPostDoc</h3>
+                        <p>Search for postdoctoral research opportunities.</p>
+                        <a href="https://www.findapostdoc.com/"
+                           target="_blank" rel="noopener noreferrer">
+                            Search postdocs →
+                        </a>
+                    </article>
+                </div>
+
+                <p class="small-note">
+                    These links are external search resources, not verified
+                    current vacancies. Check each institution's official
+                    announcement for deadlines and eligibility.
+                </p>
+            </div>
+        </section>
+
+        <!-- COLLABORATIONS -->
+        <section class="content-section alternate" id="collaborations">
+            <div class="container">
+                <h2 class="section-title">Research Collaborations</h2>
+
+                <p class="section-intro">
+                    I welcome academic networking and potential collaboration
+                    with researchers, laboratories, and universities.
+                </p>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3>Robotics &amp; Mechatronics</h3>
+                        <p>
+                            Collaborative work on robotic mechanisms,
+                            mathematical modeling, control, and prototyping.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>UAVs &amp; Inspection</h3>
+                        <p>
+                            Research on reconfigurable drones, autonomous
+                            inspection, thermal sensing, and mission planning.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>AI &amp; Autonomous Systems</h3>
+                        <p>
+                            Joint research on intelligent perception,
+                            decision-making, and autonomous robotic applications.
+                        </p>
+                    </article>
+                </div>
+
+                <p style="margin-top:22px;">
+                    <a class="button"
+                       href="mailto:mohammedkhadem1994@gmail.com?subject=Research%20Collaboration">
+                        Discuss a Collaboration
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- RESOURCES -->
+        <section class="content-section" id="resources">
+            <div class="container">
+                <h2 class="section-title">Research Resources</h2>
+
+                <p class="section-intro">
+                    Useful platforms for literature searches, academic
+                    discovery, and research visibility.
+                </p>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3>Google Scholar</h3>
+                        <p>
+                            Discover scholarly articles, citations,
+                            and related publications.
+                        </p>
+                        <a href="https://scholar.google.com/"
+                           target="_blank" rel="noopener noreferrer">
+                            Open Google Scholar →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Semantic Scholar</h3>
+                        <p>
+                            Search academic literature and discover
+                            related research.
+                        </p>
+                        <a href="https://www.semanticscholar.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore papers →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>OpenAlex</h3>
+                        <p>
+                            Explore scholarly metadata for papers,
+                            authors, institutions, and topics.
+                        </p>
+                        <a href="https://openalex.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore OpenAlex →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>DOAJ</h3>
+                        <p>
+                            Find open-access journals and scholarly publications.
+                        </p>
+                        <a href="https://doaj.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            Search open journals →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>ResearchGate</h3>
+                        <p>
+                            Visit my research profile and explore publications
+                            and projects.
+                        </p>
+                        <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
+                           target="_blank" rel="noopener noreferrer">
+                            My ResearchGate →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>ORCID</h3>
+                        <p>
+                            View my researcher identifier and academic record.
+                        </p>
+                        <a href="https://orcid.org/0000-0002-2638-2938"
+                           target="_blank" rel="noopener noreferrer">
+                            My ORCID →
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH TOOLS -->
+        <section class="content-section alternate" id="tools">
+            <div class="container">
+                <h2 class="section-title">Research Tools &amp; Software</h2>
+
+                <p class="section-intro">
+                    Selected software and platforms relevant to robotics,
+                    mechatronics, AI, and scientific computing.
+                </p>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3>Python</h3>
+                        <p>
+                            Scientific computing, automation, data analysis,
+                            machine learning, and prototyping.
+                        </p>
+                        <a href="https://www.python.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            Official website →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>ROS</h3>
+                        <p>
+                            Software libraries and tools for building
+                            robotic applications.
+                        </p>
+                        <a href="https://www.ros.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            Official website →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>MATLAB</h3>
+                        <p>
+                            Numerical computing, modeling, simulation,
+                            and control-system analysis.
+                        </p>
+                        <a href="https://www.mathworks.com/products/matlab.html"
+                           target="_blank" rel="noopener noreferrer">
+                            Learn more →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>OpenCV</h3>
+                        <p>
+                            Computer vision and image-processing tools
+                            for robotic perception.
+                        </p>
+                        <a href="https://opencv.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            Official website →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>PyTorch</h3>
+                        <p>
+                            Deep learning and machine learning for
+                            intelligent systems.
+                        </p>
+                        <a href="https://pytorch.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            Official website →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>GitHub</h3>
+                        <p>
+                            Version control, open-source projects,
+                            and collaborative software development.
+                        </p>
+                        <a href="https://github.com/"
+                           target="_blank" rel="noopener noreferrer">
+                            Open GitHub →
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSES -->
+        <section class="content-section" id="courses">
+            <div class="container">
+                <h2 class="section-title">Courses &amp; Tutorials</h2>
+
+                <p class="section-intro">
+                    Learning resources for students and researchers interested
+                    in programming, robotics, and AI.
+                </p>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3>Python Programming</h3>
+                        <p>
+                            Start with variables, data types, conditions,
+                            loops, functions, and scientific libraries.
+                        </p>
+                        <a href="https://docs.python.org/3/tutorial/"
+                           target="_blank" rel="noopener noreferrer">
+                            Python tutorial →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Machine Learning</h3>
+                        <p>
+                            Learn supervised learning, model evaluation,
+                            and practical model development.
+                        </p>
+                        <a href="https://scikit-learn.org/stable/tutorial/index.html"
+                           target="_blank" rel="noopener noreferrer">
+                            Scikit-learn tutorials →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Deep Learning</h3>
+                        <p>
+                            Explore neural networks and practical
+                            deep-learning workflows.
+                        </p>
+                        <a href="https://pytorch.org/tutorials/"
+                           target="_blank" rel="noopener noreferrer">
+                            PyTorch tutorials →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Robotics</h3>
+                        <p>
+                            Explore robotics middleware, tools,
+                            and software development concepts.
+                        </p>
+                        <a href="https://docs.ros.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            ROS documentation →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Control Systems</h3>
+                        <p>
+                            Review modeling, feedback control,
+                            and simulation concepts.
+                        </p>
+                        <a href="https://ctms.engin.umich.edu/"
+                           target="_blank" rel="noopener noreferrer">
+                            Control tutorials →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Computer Vision</h3>
+                        <p>
+                            Learn image-processing and computer-vision
+                            fundamentals.
+                        </p>
+                        <a href="https://docs.opencv.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            OpenCV documentation →
+                        </a>
+                    </article>
+                </div>
+
+                <p class="small-note">
+                    External resources are provided for learning.
+                    Their availability and content are managed by
+                    their respective providers.
+                </p>
+            </div>
+        </section>
+
+        <!-- ACADEMIC RESOURCES AND NEWS -->
+        <section class="content-section alternate" id="news">
+            <div class="container">
+                <h2 class="section-title">Academic News &amp; Announcements</h2>
+
+                <p class="section-intro">
+                    Useful places to monitor research calls, conferences,
+                    funding programmes, and academic opportunities.
+                </p>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3>European Research Calls</h3>
+                        <p>
+                            Find information about European research
+                            programmes and funding opportunities.
+                        </p>
+                        <a href="https://research-and-innovation.ec.europa.eu/"
+                           target="_blank" rel="noopener noreferrer">
+                            Research and Innovation →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>CORDIS</h3>
+                        <p>
+                            Explore European research projects,
+                            results, and funded initiatives.
+                        </p>
+                        <a href="https://cordis.europa.eu/"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore CORDIS →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>IEEE</h3>
+                        <p>
+                            Find engineering publications, technical
+                            communities, and conference information.
+                        </p>
+                        <a href="https://www.ieee.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            IEEE website →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <h3>EURAXESS</h3>
+                        <p>
+                            Explore research career information
+                            and opportunities across Europe.
+                        </p>
+                        <a href="https://euraxess.ec.europa.eu/"
+                           target="_blank" rel="noopener noreferrer">
+                            Visit EURAXESS →
+                        </a>
+                    </article>
+                </div>
+
+                <p class="small-note">
+                    This section links to external resources; it does not
+                    automatically publish or verify live news.
+                </p>
+            </div>
+        </section>
+
+        <!-- CV -->
+        <section class="content-section" id="cv">
+            <div class="container">
+                <h2 class="section-title">Curriculum Vitae</h2>
+
+                <p class="section-intro">
+                    Consult my CV for further details about my education,
+                    research experience, technical skills, and publications.
+                </p>
+
+                <a class="button"
+                   href="cv.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View My CV
+                </a>
+
+                <a class="button" href="cv.pdf" download>
+                    Download My CV
+                </a>
+
+                <p class="small-note">
+                    Upload your PDF file as <strong>cv.pdf</strong>
+                    to the same repository folder as this HTML file.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="content-section alternate" id="contact">
+            <div class="container">
+                <div class="contact-box">
+                    <h2>Contact &amp; Research Collaboration</h2>
+
+                    <p>
+                        I welcome academic networking and potential collaboration
+                        in robotics, mechatronics, UAVs, control, and autonomous
+                        systems.
+                    </p>
+
+                    <p>
+                        <strong>ResearchGate:</strong>
+                        <a href="https://www.researchgate.net/profile/Mohammed-Khadem"
+                           target="_blank" rel="noopener noreferrer">
+                            Mohammed Khadem
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>ORCID:</strong>
+                        <a href="https://orcid.org/0000-0002-2638-2938"
+                           target="_blank" rel="noopener noreferrer">
+                            0000-0002-2638-2938
+                        </a>
+                    </p>
+
+                    <div class="email-list">
+                        <strong>Email:</strong>
+
+                        <a href="mailto:mohammed.khadem@unical.it">
+                            mohammed.khadem@unical.it
+                        </a>
+
+                        <a href="mailto:m.khadem@univ-skikda.dz">
+                            m.khadem@univ-skikda.dz
+                        </a>
+
+                        <a href="mailto:mohammedkhadem1994@gmail.com">
+                            mohammedkhadem1994@gmail.com
+                        </a>
+                    </div>
+
+                    <p style="margin-top:18px;">
+                        <a class="button"
+                           href="mailto:mohammedkhadem1994@gmail.com?subject=Research%20Collaboration">
+                            Email Me
+                        </a>
+
+                        <a class="button"
+                           href="https://www.researchgate.net/profile/Mohammed-Khadem"
+                           target="_blank" rel="noopener noreferrer">
+                            ResearchGate
+                        </a>
+
+                        <a class="button"
+                           href="https://orcid.org/0000-0002-2638-2938"
+                           target="_blank" rel="noopener noreferrer">
+                            ORCID
+                        </a>
+                    </p>
+
+                    <p class="small-note" style="color:#c3d9e8;">
+                        Email buttons open your email application.
+                        This static website does not store or send messages
+                        through an online contact form.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            &copy; <span id="year"></span> Mohammed Khadem, PhD.
+            Academic Research Website.
         </p>
-        <div class="card">
-            <h3>Research Vision</h3>
-            <p>
-                The goal is to develop a collaborative research platform for
-                sharing ideas, developing concepts, publishing research,
-                and building future partnerships in robotics and mechatronics.
-            </p>
-            <h3 style="margin-top:18px;">Research Areas</h3>
-            <ul class="content-list">
-                <li>Cable-driven parallel robots and rehabilitation robotics</li>
-                <li>Mechatronic system design, modeling, and control</li>
-                <li>UAVs, structural inspection, and thermal monitoring</li>
-                <li>Artificial intelligence and autonomous robotic systems</li>
-                <li>Energy-aware mission planning and robotic autonomy</li>
-            </ul>
-            <p class="small-note">
-                This is a virtual research initiative, not a claim of formal
-                institutional accreditation or a physically equipped laboratory.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- ACADEMIC JOBS -->
-<section class="content-section" id="jobs">
-    <div class="container">
-        <h2 class="section-title">Academic Jobs &amp; Research Opportunities</h2>
-        <p class="section-intro">
-            Useful starting points for finding postdoctoral, research scientist,
-            faculty, and robotics-related opportunities.
+        <p style="margin-top:6px;">
+            <a href="#home">Back to top ↑</a>
+            &nbsp; | &nbsp;
+            <a href="ilrmai.html">Visit ILRMAI</a>
         </p>
-        <div class="grid">
-            <div class="card">
-                <h3>EURAXESS</h3>
-                <p>Research jobs and opportunities across Europe.</p>
-                <a href="https://euraxess.ec.europa.eu/jobs" target="_blank" rel="noopener noreferrer">Search research jobs →</a>
-            </div>
-            <div class="card">
-                <h3>Academic Positions</h3>
-                <p>Academic and research vacancies at universities worldwide.</p>
-                <a href="https://academicpositions.com/" target="_blank" rel="noopener noreferrer">Explore positions →</a>
-            </div>
-            <div class="card">
-                <h3>Nature Careers</h3>
-                <p>Research and academic career opportunities in science and engineering.</p>
-                <a href="https://www.nature.com/naturecareers" target="_blank" rel="noopener noreferrer">Visit Nature Careers →</a>
-            </div>
-            <div class="card">
-                <h3>FindAPostDoc</h3>
-                <p>Search for postdoctoral research opportunities.</p>
-                <a href="https://www.findapostdoc.com/" target="_blank" rel="noopener noreferrer">Search postdocs →</a>
-            </div>
-        </div>
-        <p class="small-note">These are external search resources, not verified current vacancies. Check each institution's official announcement for deadlines and eligibility.</p>
-    </div>
-</section>
+    </footer>
 
-<!-- COLLABORATIONS -->
-<section class="content-section alternate" id="collaborations">
-    <div class="container">
-        <h2 class="section-title">Research Collaborations</h2>
-        <p class="section-intro">
-            I welcome academic networking and potential collaboration with
-            researchers, laboratories, and universities.
-        </p>
-        <div class="grid">
-            <div class="card">
-                <h3>Robotics &amp; Mechatronics</h3>
-                <p>Collaborative work on robotic mechanisms, mathematical modeling, control, and prototyping.</p>
-            </div>
-            <div class="card">
-                <h3>UAVs &amp; Inspection</h3>
-                <p>Research on reconfigurable drones, autonomous inspection, thermal sensing, and mission planning.</p>
-            </div>
-            <div class="card">
-                <h3>AI &amp; Autonomous Systems</h3>
-                <p>Joint research on intelligent perception, decision-making, and autonomous robotic applications.</p>
-            </div>
-        </div>
-        <p style="margin-top:22px;">
-            <a class="button" href="mailto:mohammedkhadem1994@gmail.com?subject=Research%20Collaboration">Discuss a Collaboration</a>
-        </p>
-    </div>
-</section>
+    <script>
+        // Automatically update the copyright year.
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
 
-<!-- RESOURCES -->
-<section class="content-section" id="resources">
-    <div class="container">
-        <h2 class="section-title">Research Resources</h2>
-        <p class="section-intro">Useful platforms for literature searches, academic discovery, and research visibility.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>Google Scholar</h3>
-                <p>Discover scholarly articles, citations, and related publications.</p>
-                <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a>
-            </div>
-            <div class="card">
-                <h3>Semantic Scholar</h3>
-                <p>Search academic literature and discover related research.</p>
-                <a href="https://www.semanticscholar.org/" target="_blank" rel="noopener noreferrer">Explore papers →</a>
-            </div>
-            <div class="card">
-                <h3>OpenAlex</h3>
-                <p>Explore open scholarly metadata for papers, authors, institutions, and topics.</p>
-                <a href="https://openalex.org/" target="_blank" rel="noopener noreferrer">Explore OpenAlex →</a>
-            </div>
-            <div class="card">
-                <h3>DOAJ</h3>
-                <p>Find open-access journals and scholarly publications.</p>
-                <a href="https://doaj.org/" target="_blank" rel="noopener noreferrer">Search open journals →</a>
-            </div>
-            <div class="card">
-                <h3>ResearchGate</h3>
-                <p>Visit my research profile and explore publications and projects.</p>
-                <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">My ResearchGate →</a>
-            </div>
-            <div class="card">
-                <h3>ORCID</h3>
-                <p>View my researcher identifier and connected academic record.</p>
-                <a href="https://orcid.org/0000-0002-2638-2938" target="_blank" rel="noopener noreferrer">My ORCID →</a>
-            </div>
-        </div>
-    </div>
-</section>
+        // Highlight the sidebar link for the section currently in view.
+        const pageSections = document.querySelectorAll(
+            "main section[id]"
+        );
 
-<!-- RESEARCH TOOLS -->
-<section class="content-section alternate" id="tools">
-    <div class="container">
-        <h2 class="section-title">Research Tools &amp; Software</h2>
-        <p class="section-intro">Selected software and platforms relevant to robotics, mechatronics, AI, and scientific computing.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>Python</h3>
-                <p>Scientific computing, automation, data analysis, machine learning, and prototyping.</p>
-                <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Official website →</a>
-            </div>
-            <div class="card">
-                <h3>ROS</h3>
-                <p>Software libraries and tools for building robotic applications.</p>
-                <a href="https://www.ros.org/" target="_blank" rel="noopener noreferrer">Official website →</a>
-            </div>
-            <div class="card">
-                <h3>MATLAB</h3>
-                <p>Numerical computing, modeling, simulation, and control-system analysis.</p>
-                <a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener noreferrer">Learn more →</a>
-            </div>
-            <div class="card">
-                <h3>OpenCV</h3>
-                <p>Computer vision and image-processing tools for robotic perception.</p>
-                <a href="https://opencv.org/" target="_blank" rel="noopener noreferrer">Official website →</a>
-            </div>
-            <div class="card">
-                <h3>PyTorch</h3>
-                <p>Deep learning and machine learning for intelligent systems.</p>
-                <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer">Official website →</a>
-            </div>
-            <div class="card">
-                <h3>GitHub</h3>
-                <p>Version control, open-source projects, and collaborative software development.</p>
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Open GitHub →</a>
-            </div>
-        </div>
-    </div>
-</section>
+        const sideLinks = document.querySelectorAll(
+            ".sidebar a[href^='#']"
+        );
 
-<!-- COURSES -->
-<section class="content-section" id="courses">
-    <div class="container">
-        <h2 class="section-title">Courses &amp; Tutorials</h2>
-        <p class="section-intro">Learning resources for students and researchers interested in programming, robotics, and AI.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>Python Programming</h3>
-                <p>Start with variables, data types, conditions, loops, functions, and scientific libraries.</p>
-                <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer">Python tutorial →</a>
-            </div>
-            <div class="card">
-                <h3>Machine Learning</h3>
-                <p>Learn core concepts in supervised learning, evaluation, and model development.</p>
-                <a href="https://scikit-learn.org/stable/tutorial/index.html" target="_blank" rel="noopener noreferrer">Scikit-learn tutorials →</a>
-            </div>
-            <div class="card">
-                <h3>Deep Learning</h3>
-                <p>Explore neural networks and practical deep-learning workflows.</p>
-                <a href="https://pytorch.org/tutorials/" target="_blank" rel="noopener noreferrer">PyTorch tutorials →</a>
-            </div>
-            <div class="card">
-                <h3>Robotics</h3>
-                <p>Explore robotics middleware, tools, and software development concepts.</p>
-                <a href="https://docs.ros.org/" target="_blank" rel="noopener noreferrer">ROS documentation →</a>
-            </div>
-            <div class="card">
-                <h3>Control Systems</h3>
-                <p>Review modeling, feedback control, and simulation concepts.</p>
-                <a href="https://ctms.engin.umich.edu/" target="_blank" rel="noopener noreferrer">Control tutorials →</a>
-            </div>
-            <div class="card">
-                <h3>Computer Vision</h3>
-                <p>Learn image processing and computer vision fundamentals.</p>
-                <a href="https://docs.opencv.org/" target="_blank" rel="noopener noreferrer">OpenCV documentation →</a>
-            </div>
-        </div>
-        <p class="small-note">External resources are provided for learning; their availability and content are managed by their respective providers.</p>
-    </div>
-</section>
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            sideLinks.forEach((link) => {
+                                const isActive =
+                                    link.getAttribute("href") ===
+                                    "#" + entry.target.id;
 
-<!-- ACADEMIC NEWS -->
-<section class="content-section alternate" id="news">
-    <div class="container">
-        <h2 class="section-title">Academic News &amp; Announcements</h2>
-        <p class="section-intro">Useful places to monitor research calls, conferences, funding, and academic opportunities.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>European Research Calls</h3>
-                <p>Find information about European research programmes and funding opportunities.</p>
-                <a href="https://research-and-innovation.ec.europa.eu/" target="_blank" rel="noopener noreferrer">Research and Innovation →</a>
-            </div>
-            <div class="card">
-                <h3>CORDIS</h3>
-                <p>Explore European research projects, results, and funded initiatives.</p>
-                <a href="https://cordis.europa.eu/" target="_blank" rel="noopener noreferrer">Explore CORDIS →</a>
-            </div>
-            <div class="card">
-                <h3>IEEE</h3>
-                <p>Find engineering publications, technical communities, and conference information.</p>
-                <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer">IEEE website →</a>
-            </div>
-            <div class="card">
-                <h3>EURAXESS News</h3>
-                <p>Explore research career information and opportunities across Europe.</p>
-                <a href="https://euraxess.ec.europa.eu/" target="_blank" rel="noopener noreferrer">Visit EURAXESS →</a>
-            </div>
-        </div>
-        <p class="small-note">This section links to external sources; it does not automatically publish or verify live news.</p>
-    </div>
-</section>
+                                link.classList.toggle("active", isActive);
+                            });
+                        }
+                    });
+                },
+                {
+                    rootMargin: "-20% 0px -65% 0px"
+                }
+            );
 
-<!-- CV -->
-<section class="content-section" id="cv">
-    <div class="container">
-        <h2 class="section-title">Curriculum Vitae</h2>
-        <p class="section-intro">
-            Consult my CV for further details about my education, research experience,
-            technical skills, and publications.
-        </p>
-        <a class="button" href="cv.pdf" target="_blank" rel="noopener noreferrer">View My CV</a>
-        <a class="button" href="cv.pdf" download>Download My CV</a>
-        <p class="small-note">Place your PDF file named cv.pdf in the same folder as this HTML file.</p>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="content-section alternate" id="contact">
-    <div class="container">
-        <div class="contact-box">
-            <h2>Contact &amp; Research Collaboration</h2>
-            <p>
-                I welcome academic networking and potential collaboration in robotics,
-                mechatronics, UAVs, control, and autonomous systems.
-            </p>
-            <p><strong>ResearchGate:</strong>
-                <a href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">Mohammed Khadem</a>
-            </p>
-            <p><strong>ORCID:</strong>
-                <a href="https://orcid.org/0000-0002-2638-2938" target="_blank" rel="noopener noreferrer">0000-0002-2638-2938</a>
-            </p>
-            <div class="email-list">
-                <strong>Email:</strong>
-                <a href="mailto:mohammed.khadem@unical.it">mohammed.khadem@unical.it</a>
-                <a href="mailto:m.khadem@univ-skikda.dz">m.khadem@univ-skikda.dz</a>
-                <a href="mailto:mohammedkhadem1994@gmail.com">mohammedkhadem1994@gmail.com</a>
-            </div>
-            <p style="margin-top:18px;">
-                <a class="button" href="mailto:mohammedkhadem1994@gmail.com?subject=Research%20Collaboration">Email Me</a>
-                <a class="button" href="https://www.researchgate.net/profile/Mohammed-Khadem" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-                <a class="button" href="https://orcid.org/0000-0002-2638-2938" target="_blank" rel="noopener noreferrer">ORCID</a>
-            </p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© <span id="year"></span> Mohammed Khadem, PhD. Academic Research Website.</p>
-</footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-
-/* Highlight the selected sidebar link */
-const pageSections = document.querySelectorAll("section[id]");
-const sideLinks = document.querySelectorAll(".sidebar a[href^='#']");
-
-if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                sideLinks.forEach((link) => {
-                    link.classList.toggle(
-                        "active",
-                        link.getAttribute("href") === "#" + entry.target.id
-                    );
-                });
-            }
-        });
-    }, { rootMargin: "-20% 0px -65% 0px" });
-
-    pageSections.forEach((section) => observer.observe(section));
-}
-</script>
+            pageSections.forEach((section) => {
+                observer.observe(section);
+            });
+        }
+    </script>
 
 </body>
 </html>
